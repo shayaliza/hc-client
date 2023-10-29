@@ -1,7 +1,25 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import Cookies from "js-cookie";
 
 function HospitalOwnerPage() {
+  const userPhoneNumber = Cookies.get("userPhoneNumber"); // Change to userPhoneNumber
+
+  // const userEmail = Cookies.get("userEmail");
+  // const [superuserEmail, setSuperuserEmail] = useState(userEmail);
+
+
+  if (userPhoneNumber !== undefined) {
+    Cookies.set('userPhoneNumber', userPhoneNumber); // Change to userPhoneNumber
+    console.log(userPhoneNumber);
+  }
+  
+  // if (userEmail !== undefined) {
+  //   Cookies.set('userEmail', userEmail)
+  //   console.log(userEmail);
+  // }
+
+
   const [doctorData, setDoctorData] = useState({
     name: "",
     speciality: "",
@@ -9,12 +27,38 @@ function HospitalOwnerPage() {
     daysAvailable: "",
   });
 
+  const [isSuperUser, setIsSuperUser] = useState(false); //false krna h abhi isko
+
+  useEffect(() => {
+ 
+    // 
+    const checkSuperUser = async () => {
+      try {
+        const response = await fetch("http://localhost:5000/api/check-superuser", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ phoneNumber: userPhoneNumber }), // Send the user's phone number
+        });
+    
+        if (response.ok) {
+          const data = await response.json();
+          setIsSuperUser(data.isSuperUser);
+        }
+      } catch (error) {
+        console.error("Error checking superuser status:", error);
+      }
+    };
+    
+
+    checkSuperUser();
+  }, []);
+
   const handleDoctorSubmit = async (e) => {
     e.preventDefault();
-    // Assume you have a function to get the hospital owner's hospital name.
-    const hospitalName = getHospitalName(); // Replace with actual logic.
 
-    // Prepare the doctor data to send to the backend
+    const hospitalName = getHospitalName();
     const dataToSend = {
       ...doctorData,
       hospitalName,
@@ -47,6 +91,11 @@ function HospitalOwnerPage() {
       // You can show an error message here if needed.
     }
   };
+
+  if (!isSuperUser) {
+    // Display a message or redirect if the user is not a superuser
+    return <div>You do not have permission to access this page.</div>;
+  }
 
   return (
     <div className="max-w-md mx-auto mt-4 p-6 bg-white shadow-md rounded">

@@ -18,6 +18,24 @@ function LoginForm() {
   }, []);
   const handleSubmit = async (e) => {
     e.preventDefault();
+{userData.userType === "hospital" && (
+  <div className="mb-4">
+    <label htmlFor="phoneNumber" className="block text-gray-600 text-sm font-semibold">
+      Phone Number
+    </label>
+    <input
+      type="text"
+      id="phoneNumber"
+      name="phoneNumber"
+      value={userData.phoneNumber}
+      onChange={(e) =>
+        setUserData({ ...userData, phoneNumber: e.target.value })
+      }
+      className="w-full p-2 border border-gray-300 rounded mt-2"
+      required
+    />
+  </div>
+)}
 
     if (!userData.email || !userData.password) {
       toast.error("Email and password are required.");
@@ -53,6 +71,10 @@ function LoginForm() {
 
         // Set the user's email in a cookie or local storage
         Cookies.set("userEmail", userData.email, { expires: 7, path: "/" });
+        Cookies.set('userPhoneNumber', userData.phoneNumber, { expires: 7, path: "/" });
+
+        // After a successful login or registration, you should set the user's phone number in Cookies.
+
         setIsLoggedIn(true);
         // Show a success toast
         toast.success("Login successful");
