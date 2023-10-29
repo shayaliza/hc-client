@@ -18,6 +18,7 @@
     "zxcvbn": "^4.4.2"
   },
   "devDependencies": {
+    "@types/node": "20.8.9",
     "@types/react": "18.2.33",
     "autoprefixer": "^10",
     "eslint": "^8",
