@@ -41,12 +41,6 @@ function LoginForm() {
       toast.error("Email and password are required.");
       return;
     }
-
-    // if (userData.hospitalOwner && (!userData.hospitalName || !userData.phoneNumber)) {
-    //   toast.error("Hospital Name and Phone Number are required for hospital owners.");
-    //   return;
-    // }
-
     try {
       const response = await fetch(
         // `${process.env.NEXT_PUBLIC_BACK_END}api/login`,
@@ -72,6 +66,8 @@ function LoginForm() {
         // Set the user's email in a cookie or local storage
         Cookies.set("userEmail", userData.email, { expires: 7, path: "/" });
         Cookies.set('userPhoneNumber', userData.phoneNumber, { expires: 7, path: "/" });
+        Cookies.set('hospitalName', userData.hospitalName, { expires: 7, path: "/" });
+
 
         // After a successful login or registration, you should set the user's phone number in Cookies.
 

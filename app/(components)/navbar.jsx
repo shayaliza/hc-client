@@ -14,6 +14,11 @@ function Navbar() {
           </Link>
         </li>
         <li>
+          <Link href="/showDoctor" className="text-white">
+         Show doctor
+          </Link>
+        </li>
+        <li>
           <Link href="/hospitals" className="text-white">
             Hospitals
           </Link>

@@ -1,23 +1,17 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Cookies from "js-cookie";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function HospitalOwnerPage() {
-  const userPhoneNumber = Cookies.get("userPhoneNumber"); // Change to userPhoneNumber
-
-  // const userEmail = Cookies.get("userEmail");
-  // const [superuserEmail, setSuperuserEmail] = useState(userEmail);
-
-
+  const userPhoneNumber = Cookies.get("userPhoneNumber"); 
+//  Cookies.set('hospitalName', hospitalName); 
   if (userPhoneNumber !== undefined) {
-    Cookies.set('userPhoneNumber', userPhoneNumber); // Change to userPhoneNumber
+    Cookies.set('userPhoneNumber', userPhoneNumber); 
     console.log(userPhoneNumber);
   }
   
-  // if (userEmail !== undefined) {
-  //   Cookies.set('userEmail', userEmail)
-  //   console.log(userEmail);
-  // }
 
 
   const [doctorData, setDoctorData] = useState({
@@ -39,7 +33,7 @@ function HospitalOwnerPage() {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ phoneNumber: userPhoneNumber }), // Send the user's phone number
+          body: JSON.stringify({ phoneNumber: userPhoneNumber }), 
         });
     
         if (response.ok) {
@@ -54,6 +48,11 @@ function HospitalOwnerPage() {
 
     checkSuperUser();
   }, []);
+
+  function getHospitalName() {
+    return Cookies.get('hospitalName');
+  }
+  
 
   const handleDoctorSubmit = async (e) => {
     e.preventDefault();
@@ -79,17 +78,16 @@ function HospitalOwnerPage() {
       );
 
       if (response.ok) {
-        // Handle successful doctor data upload
         console.log("Doctor data uploaded successfully");
-        // You can show a success message here if needed.
+        toast.success("Doctor data uploaded successfully");
+
       } else {
         // Handle errors
         console.error("Doctor data upload failed");
-        // You can show an error message here if needed.
+        toast.success("Doctor data upload failed");
       }
     } catch (error) {
       console.error("Error uploading doctor data:", error);
-      // You can show an error message here if needed.
     }
   };
 
@@ -178,6 +176,20 @@ function HospitalOwnerPage() {
             required
           />
         </div>
+        <div className="mb-4">
+          <label htmlFor="hospitalName" className="block text-gray-600 text-sm font-semibold">
+            Hospital Name
+          </label>
+          <input
+            type="text"
+            id="hospitalName"
+            name="hospitalName"
+            value={getHospitalName()}
+            readOnly // Make the input read-only
+            className="w-full p-2 border border-gray-300 rounded mt-2"
+            required
+          />
+        </div>
         <div className="mt-6">
           <button
             type="submit"
@@ -187,6 +199,18 @@ function HospitalOwnerPage() {
           </button>
         </div>
       </form>
+      <div>
+        <ToastContainer
+          position="top-right"
+          autoClose={3000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+        />
+      </div>
     </div>
   );
 }
