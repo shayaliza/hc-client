@@ -1,10 +1,30 @@
-"use client";
-import React, { useState, useEffect } from "react";
-import Cookies from "js-cookie";
+// models/doctor.js
+const mongoose = require("mongoose");
 
-function HospitalOwnerPage() {
-  const userEmail = Cookies.get("userEmail");
-  const userPhoneNumber = Cookies.get("userPhoneNumber"); // Get the user's phone number
+const doctorSchema = new mongoose.Schema({
+  name: String,
+  speciality: String,
+  time: String,
+  daysAvailable: String,
+  hospitalName: String, // Assuming you want to associate doctors with hospitals
+});
 
-  // Rest of your component code...
-}
+module.exports = mongoose.model("Doctor", doctorSchema);
+
+
+// models/doctor.js
+const mongoose = require("mongoose");
+
+const doctorSchema = new mongoose.Schema({
+  name: String,
+  speciality: String,
+  time: String,
+  daysAvailable: String,
+  hospitalName: String, // Assuming you want to associate doctors with hospitals
+});
+
+module.exports = mongoose.model("Doctor", doctorSchema);
+
+
+const Doctor = require("../models/doctor"); // Import the Doctor model or replace it with the actual path to your doctor model
++

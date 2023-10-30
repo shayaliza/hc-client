@@ -3,6 +3,7 @@ const express = require("express");
 const router = express.Router();
 const SuperUser = require("../models/superuser");
 const User = require("../models/user");
+const Doctor = require("../models/doctor");
 const Cookies = require("js-cookie"); // Import the Cookies library
 
 router.get("/superusers", async (req, res) => {
@@ -62,72 +63,6 @@ router.get("/superusers/:hospitalName", async (req, res) => {
   }
 });
 
-// router.get("/check-superuser", async (req, res) => {
-//   try {
-//     const userEmail = req.cookies.userEmail; // Get the user's email from the cookie
-
-//     if (!userEmail) {
-//       return res.status(401).json({ isSuperUser: false });
-//     }
-
-//     // Check if the user's email exists in the SuperUser collection
-//     const superuser = await SuperUser.findOne({ email: userEmail });
-
-//     if (superuser) {
-//       return res.json({ isSuperUser: true });
-//     } else {
-//       return res.json({ isSuperUser: false });
-//     }
-//   } catch (error) {
-//     console.error("Error checking superuser status:", error);
-//     res.status(500).json({ message: "Internal server error" });
-//   }
-// });
-
-// router.get("/check-superuser", async (req, res) => {
-//   try {
-//     const userEmail = req.cookies.userEmail; // Get the user's email from the cookie
-
-//     if (!userEmail) {
-//       return res.status(401).json({ isSuperUser: false });
-//     }
-
-//     // Check if the user's email exists in the User collection
-//     const user = await User.findOne({ email: userEmail });
-
-//     if (user && user.phoneNumber) {
-//       return res.json({ isSuperUser: true });
-//     } else {
-//       return res.json({ isSuperUser: false });
-//     }
-//   } catch (error) {
-//     console.error("Error checking superuser status:", error);
-//     res.status(500).json({ message: "Internal server error" });
-//   }
-// });
-
-// router.post("/check-superuser", async (req, res) => {
-//   try {
-//     const { email } = req.body; // Get the user's email from the request body
-
-//     if (!email) {
-//       return res.status(400).json({ isSuperUser: false });
-//     }
-
-//     // Check if the user's email exists in the User collection
-//     const user = await User.findOne({ email });
-
-//     if (user && user.phoneNumber) {
-//       return res.json({ isSuperUser: true });
-//     } else {
-//       return res.json({ isSuperUser: false });
-//     }
-//   } catch (error) {
-//     console.error("Error checking superuser status:", error);
-//     res.status(500).json({ message: "Internal server error" });
-//   }
-// });
-
 router.post("/check-superuser", async (req, res) => {
   try {
     const { phoneNumber } = req.body; // Get the user's phone number from the request body
@@ -146,6 +81,25 @@ router.post("/check-superuser", async (req, res) => {
     }
   } catch (error) {
     console.error("Error checking superuser status:", error);
+    res.status(500).json({ message: "Internal server error" });
+  }
+});
+
+// Define a route to save doctor data
+router.post("/upload-doctor", async (req, res) => {
+  try {
+    const doctorData = req.body; // Assuming the request body contains the doctor data
+
+    // Create a new doctor document using the Doctor model and save it to the database
+    const newDoctor = new Doctor(doctorData);
+    await newDoctor.save();
+
+    // Return a success message or the saved doctor data if needed
+    res
+      .status(201)
+      .json({ message: "Doctor data saved successfully", data: newDoctor });
+  } catch (error) {
+    console.error("Error saving doctor data:", error);
     res.status(500).json({ message: "Internal server error" });
   }
 });

@@ -67,7 +67,8 @@ function HospitalOwnerPage() {
     // Send the doctor data to the backend for saving.
     try {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_BACK_END}api/upload-doctor`,
+        // `${process.env.NEXT_PUBLIC_BACK_END}api/upload-doctor`,
+        "http://localhost:5000/api/upload-doctor",
         {
           method: "POST",
           headers: {
