@@ -10,12 +10,6 @@ const HospitalDoctors = ({ hospitalName }) => {
   const [showDoctors, setShowDoctors] = useState(false); // Add showDoctors state
 
   const handleViewDoctors = () => {
-    // fetch(`http://localhost:5000/api/doctors/${hospitalName}`)
-    //   .then((response) => response.json())
-    //   .then((data) => {
-    //     setDoctors(data);
-    //     setShowDoctors(true); // Show the list of doctors
-    //   });
     const apiUrl = `http://localhost:5000/api/doctors/${hospitalName}`;
     console.log("API URL:", apiUrl);
 

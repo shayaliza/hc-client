@@ -38,6 +38,11 @@ function Navbar() {
             calculator
           </Link>
         </li>
+        <li>
+          <Link href="/womaniya" className="text-white">
+            Women
+          </Link>
+        </li>
       </ul>
     </nav>
   );
