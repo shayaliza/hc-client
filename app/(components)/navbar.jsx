@@ -18,6 +18,11 @@ function Navbar() {
             Workout
           </Link>
         </li>
+        <li>
+          <Link href="/chronic" className="text-white">
+            Chronic
+          </Link>
+        </li>
 
         <li>
           <Link href="/calculator" className="text-white">

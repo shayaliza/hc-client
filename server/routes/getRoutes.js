@@ -4,7 +4,8 @@ const router = express.Router();
 const SuperUser = require("../models/superuser");
 const User = require("../models/user");
 const Doctor = require("../models/doctor");
-const Cookies = require("js-cookie"); // Import the Cookies library
+const BPRecord = require("../models/bp");
+const Cookies = require("js-cookie");
 
 router.get("/superusers", async (req, res) => {
   try {
@@ -120,49 +121,6 @@ router.get("/get-all-doctors", async (req, res) => {
   }
 });
 
-// router.get("/doctors/:hospitalName", async (req, res) => {
-//   try {
-//     const { hospitalName } = req.params;
-
-//     // Find all doctors with the specified hospital name
-//     const doctors = await Doctor.find({ hospitalName });
-
-//     if (!doctors || doctors.length === 0) {
-//       return res
-//         .status(404)
-//         .json({ message: "No doctors found for this hospital" });
-//     }
-
-//     // Return the list of doctors
-//     res.json(doctors);
-//   } catch (error) {
-//     console.error("Error getting doctors by hospital name:", error);
-//     res.status(500).json({ message: "Internal server error" });
-//   }
-// });
-
-// router.get("/doctors/:hospitalName", async (req, res) => {
-//   try {
-//     const { hospitalName } = req.params;
-
-//     // Check if the hospital name exists in your database
-//     const hospital = await SuperUser.findOne({ hospitalName });
-
-//     if (!hospital) {
-//       return res.status(404).json({ message: "Hospital not found" });
-//     }
-
-//     // Find all doctors with the specified hospital name
-//     const doctors = await Doctor.find({ hospitalName });
-
-//     // Return the list of doctors
-//     res.json(doctors);
-//   } catch (error) {
-//     console.error("Error getting doctors by hospital name:", error);
-//     res.status(500).json({ message: "Internal server error" });
-//   }
-// });
-
 router.get("/doctors/:hospitalName", async (req, res) => {
   try {
     const { hospitalName } = req.params;
@@ -188,6 +146,43 @@ router.get("/doctors/:hospitalName", async (req, res) => {
   } catch (error) {
     console.error("Error getting doctors by hospital name:", error);
     res.status(500).json({ message: "Internal server error" });
+  }
+});
+
+router.post("/bpRecords", async (req, res) => {
+  const newRecord = req.body;
+  try {
+    const bpRecord = new BPRecord(newRecord);
+    await bpRecord.save();
+    res.json({ message: "BP record saved successfully" });
+  } catch (error) {
+    console.error("Error saving BP record:", error);
+    res.status(500).json({ error: "Failed to save BP record" });
+  }
+});
+
+// Retrieve all BP records
+// router.get("/bpRecords", async (req, res) => {
+//   try {
+//     // Retrieve all BPRecord documents from the database
+//     const bpRecords = await BPRecord.find();
+//     res.json(bpRecords);
+//   } catch (error) {
+//     console.error("Error getting BP records:", error);
+//     res.status(500).json({ error: "Failed to retrieve BP records" });
+//   }
+// });
+
+router.get("/bpRecords/:userEmail", async (req, res) => {
+  const userEmail = req.params.userEmail;
+
+  try {
+    // Retrieve BPRecord documents from the database for the specified user's email
+    const bpRecords = await BPRecord.find({ userEmail });
+    res.json(bpRecords);
+  } catch (error) {
+    console.error("Error getting BP records:", error);
+    res.status(500).json({ error: "Failed to retrieve BP records" });
   }
 });
 
