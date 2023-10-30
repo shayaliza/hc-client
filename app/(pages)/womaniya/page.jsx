@@ -1,11 +1,11 @@
 "use client";
 // import React from "react";
 import React, { useState } from "react";
-import PeriodCalc from "../(components)/(woman)/periodcalc";
-import Fertility from "../(components)/(woman)/fertility";
-import Mensuration from "../(components)/(woman)/mensuration";
-import Pregnancy from "../(components)/(woman)/pregnancy";
-import Sex from "../(components)/(woman)/sex";
+import PeriodCalc from "../../(components)/(woman)/periodcalc";
+import Fertility from "../../(components)/(woman)/fertility";
+import Mensuration from "../../(components)/(woman)/mensuration";
+import Pregnancy from "../../(components)/(woman)/pregnancy";
+import Sex from "../../(components)/(woman)/sex";
 
 function Page() {
   const [selectedTopic, setSelectedTopic] = useState("period calculator");
@@ -62,57 +62,6 @@ function Page() {
         {selectedTopic === "sex" && <Sex />}
       </div>
     </>
-    // <div className="flex">
-    //   <div className="w-1/4 p-4">
-    //     <button
-    //       className={`block mb-4 text-blue-500 hover:underline ${
-    //         selectedTopic === "periodcalc" ? "font-bold" : ""
-    //       }`}
-    //       onClick={() => handleTopicChange("periodcalc")}
-    //     >
-    //       Period Calculator
-    //     </button>
-    //     <button
-    //       className={`block mb-4 text-blue-500 hover:underline ${
-    //         selectedTopic === "fertility" ? "font-bold" : ""
-    //       }`}
-    //       onClick={() => handleTopicChange("fertility")}
-    //     >
-    //       Fertility Blog
-    //     </button>
-    //     <button
-    //       className={`block mb-4 text-blue-500 hover:underline ${
-    //         selectedTopic === "mensuration" ? "font-bold" : ""
-    //       }`}
-    //       onClick={() => handleTopicChange("mensuration")}
-    //     >
-    //       Mensuration Blog
-    //     </button>
-    //     <button
-    //       className={`block mb-4 text-blue-500 hover:underline ${
-    //         selectedTopic === "pregnancy" ? "font-bold" : ""
-    //       }`}
-    //       onClick={() => handleTopicChange("pregnancy")}
-    //     >
-    //       Pregnancy Blog
-    //     </button>
-    //     <button
-    //       className={`block mb-4 text-blue-500 hover:underline ${
-    //         selectedTopic === "sex" ? "font-bold" : ""
-    //       }`}
-    //       onClick={() => handleTopicChange("sex")}
-    //     >
-    //       Sex Education Blog
-    //     </button>
-    //   </div>
-    //   <div className="w-3/4 p-4">
-    //     {selectedTopic === "periodcalc" && <PeriodCalc />}
-    //     {selectedTopic === "fertility" && <Fertility />}
-    //     {selectedTopic === "mensuration" && <Mensuration />}
-    //     {selectedTopic === "pregnancy" && <Pregnancy />}
-    //     {selectedTopic === "sex" && <Sex />}
-    //   </div>
-    // </div>
   );
 }
 

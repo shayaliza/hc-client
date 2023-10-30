@@ -1,6 +1,6 @@
 //app/showDoctor/page.js
-"use client"
-import React, { useState, useEffect } from 'react';
+"use client";
+import React, { useState, useEffect } from "react";
 
 function DoctorList() {
   const [doctors, setDoctors] = useState([]);

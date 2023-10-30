@@ -1,9 +1,9 @@
 "use client";
 import React from "react";
 import { useState } from "react";
-import Bmi from "../(components)/(calculator)/bmi";
-import Calorie from "../(components)/(calculator)/calorie";
-import BodyFat from "../(components)/(calculator)/bodyfat";
+import Bmi from "../../(components)/(calculator)/bmi";
+import Calorie from "../../(components)/(calculator)/calorie";
+import BodyFat from "../../(components)/(calculator)/bodyfat";
 
 export default Calc;
 function Calc() {

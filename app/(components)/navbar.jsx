@@ -9,30 +9,16 @@ function Navbar() {
           </a>
         </li>
         <li>
-          <Link href="/addDocter" className="text-white">
-            Add docter
+          <Link href="/health" className="text-white">
+            Health
           </Link>
         </li>
         <li>
-          <Link href="/showDoctor" className="text-white">
-            Show doctor
+          <Link href="/workout" className="text-white">
+            Workout
           </Link>
         </li>
-        <li>
-          <Link href="/hospitals" className="text-white">
-            Hospitals
-          </Link>
-        </li>
-        <li>
-          <Link href="/login" className="text-white">
-            Login
-          </Link>
-        </li>
-        <li>
-          <Link href="/signup" className="text-white">
-            Signup
-          </Link>
-        </li>
+
         <li>
           <Link href="/calculator" className="text-white">
             calculator
@@ -41,6 +27,17 @@ function Navbar() {
         <li>
           <Link href="/womaniya" className="text-white">
             Women
+          </Link>
+        </li>
+
+        <li>
+          <Link href="/login" className="text-white">
+            Login
+          </Link>
+        </li>
+        <li>
+          <Link href="/signup" className="text-white">
+            Signup
           </Link>
         </li>
       </ul>

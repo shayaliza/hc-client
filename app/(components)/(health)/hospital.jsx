@@ -1,11 +1,8 @@
 // Hospitals.js
-"use client"
+"use client";
 
-import React, { useState, useEffect } from 'react';
-import HospitalDoctors from "../(components)/HospitalDoctors.js"
-// import Navbar from '../(components)/navbar';
-import Link from 'next/link';
-
+import React, { useState, useEffect } from "react";
+import HospitalDoctors from "./HospitalDoctors";
 
 function Hospitals() {
   const [hospitalsData, setHospitalsData] = useState([]);

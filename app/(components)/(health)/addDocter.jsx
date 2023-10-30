@@ -5,14 +5,12 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 function HospitalOwnerPage() {
-  const userPhoneNumber = Cookies.get("userPhoneNumber"); 
-//  Cookies.set('hospitalName', hospitalName); 
+  const userPhoneNumber = Cookies.get("userPhoneNumber");
+  //  Cookies.set('hospitalName', hospitalName);
   if (userPhoneNumber !== undefined) {
-    Cookies.set('userPhoneNumber', userPhoneNumber); 
+    Cookies.set("userPhoneNumber", userPhoneNumber);
     console.log(userPhoneNumber);
   }
-  
-
 
   const [doctorData, setDoctorData] = useState({
     name: "",
@@ -24,18 +22,20 @@ function HospitalOwnerPage() {
   const [isSuperUser, setIsSuperUser] = useState(false); //false krna h abhi isko
 
   useEffect(() => {
- 
-    // 
+    //
     const checkSuperUser = async () => {
       try {
-        const response = await fetch("http://localhost:5000/api/check-superuser", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ phoneNumber: userPhoneNumber }), 
-        });
-    
+        const response = await fetch(
+          "http://localhost:5000/api/check-superuser",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ phoneNumber: userPhoneNumber }),
+          }
+        );
+
         if (response.ok) {
           const data = await response.json();
           setIsSuperUser(data.isSuperUser);
@@ -44,15 +44,13 @@ function HospitalOwnerPage() {
         console.error("Error checking superuser status:", error);
       }
     };
-    
 
     checkSuperUser();
   }, []);
 
   function getHospitalName() {
-    return Cookies.get('hospitalName');
+    return Cookies.get("hospitalName");
   }
-  
 
   const handleDoctorSubmit = async (e) => {
     e.preventDefault();
@@ -80,7 +78,6 @@ function HospitalOwnerPage() {
       if (response.ok) {
         console.log("Doctor data uploaded successfully");
         toast.success("Doctor data uploaded successfully");
-
       } else {
         // Handle errors
         console.error("Doctor data upload failed");
@@ -177,7 +174,10 @@ function HospitalOwnerPage() {
           />
         </div>
         <div className="mb-4">
-          <label htmlFor="hospitalName" className="block text-gray-600 text-sm font-semibold">
+          <label
+            htmlFor="hospitalName"
+            className="block text-gray-600 text-sm font-semibold"
+          >
             Hospital Name
           </label>
           <input
