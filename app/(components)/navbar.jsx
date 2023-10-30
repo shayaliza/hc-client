@@ -1,5 +1,6 @@
 import Link from "next/link";
 function Navbar() {
+  // added a comment by vampire
   return (
     //here new comment
     <nav className="bg-blue-500 p-4">
