@@ -1,6 +1,7 @@
 import Link from "next/link";
 function Navbar() {
   return (
+    //added a comment by vampire
     <nav className="bg-blue-500 p-4">
       <ul className="flex space-x-4">
         <li>
