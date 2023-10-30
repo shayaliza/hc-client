@@ -120,4 +120,75 @@ router.get("/get-all-doctors", async (req, res) => {
   }
 });
 
+// router.get("/doctors/:hospitalName", async (req, res) => {
+//   try {
+//     const { hospitalName } = req.params;
+
+//     // Find all doctors with the specified hospital name
+//     const doctors = await Doctor.find({ hospitalName });
+
+//     if (!doctors || doctors.length === 0) {
+//       return res
+//         .status(404)
+//         .json({ message: "No doctors found for this hospital" });
+//     }
+
+//     // Return the list of doctors
+//     res.json(doctors);
+//   } catch (error) {
+//     console.error("Error getting doctors by hospital name:", error);
+//     res.status(500).json({ message: "Internal server error" });
+//   }
+// });
+
+// router.get("/doctors/:hospitalName", async (req, res) => {
+//   try {
+//     const { hospitalName } = req.params;
+
+//     // Check if the hospital name exists in your database
+//     const hospital = await SuperUser.findOne({ hospitalName });
+
+//     if (!hospital) {
+//       return res.status(404).json({ message: "Hospital not found" });
+//     }
+
+//     // Find all doctors with the specified hospital name
+//     const doctors = await Doctor.find({ hospitalName });
+
+//     // Return the list of doctors
+//     res.json(doctors);
+//   } catch (error) {
+//     console.error("Error getting doctors by hospital name:", error);
+//     res.status(500).json({ message: "Internal server error" });
+//   }
+// });
+
+router.get("/doctors/:hospitalName", async (req, res) => {
+  try {
+    const { hospitalName } = req.params;
+
+    // Check if the hospital name exists in your database
+    const hospital = await SuperUser.findOne({ hospitalName });
+
+    if (!hospital) {
+      console.log("Hospital not found:", hospitalName);
+      return res.status(404).json({ message: "Hospital not found" });
+    }
+
+    // Find all doctors with the specified hospital name
+    const doctors = await Doctor.find({ hospitalName });
+
+    // Log the number of doctors found
+    console.log(
+      `Found ${doctors.length} doctors for hospital: ${hospitalName}`
+    );
+
+    // Return the list of doctors
+    res.json(doctors);
+  } catch (error) {
+    console.error("Error getting doctors by hospital name:", error);
+    res.status(500).json({ message: "Internal server error" });
+  }
+});
+
 module.exports = router;

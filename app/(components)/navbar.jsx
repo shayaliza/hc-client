@@ -10,12 +10,12 @@ function Navbar() {
         </li>
         <li>
           <Link href="/addDocter" className="text-white">
-           Add docter
+            Add docter
           </Link>
         </li>
         <li>
           <Link href="/showDoctor" className="text-white">
-         Show doctor
+            Show doctor
           </Link>
         </li>
         <li>
@@ -31,6 +31,11 @@ function Navbar() {
         <li>
           <Link href="/signup" className="text-white">
             Signup
+          </Link>
+        </li>
+        <li>
+          <Link href="/calculator" className="text-white">
+            calculator
           </Link>
         </li>
       </ul>

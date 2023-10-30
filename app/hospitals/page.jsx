@@ -2,6 +2,9 @@
 "use client"
 
 import React, { useState, useEffect } from 'react';
+import HospitalDoctors from "../(components)/HospitalDoctors.js"
+// import Navbar from '../(components)/navbar';
+import Link from 'next/link';
 
 
 function Hospitals() {
@@ -23,6 +26,7 @@ function Hospitals() {
           <div key={index} className="border p-4 rounded">
             <h2 className="text-lg font-semibold">{superuser.hospitalName}</h2>
             <p className="text-gray-600">Address: {superuser.address}</p>
+            <HospitalDoctors hospitalName={superuser.hospitalName} />
           </div>
         ))}
       </div>

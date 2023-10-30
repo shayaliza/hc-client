@@ -1,19 +1,25 @@
-//app/showDoctor/page.js
-"use client"
-import React, { useState, useEffect } from 'react';
+// DoctorList2.js
+"use client";
+import React, { useState, useEffect } from "react";
+import Link from "next/link";
 
-function DoctorList() {
+function DoctorList2({ hospitalName }) {
   const [doctors, setDoctors] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/get-all-doctors")
-      .then((response) => response.json())
-      .then((data) => setDoctors(data));
-  }, []);
+    if (hospitalName) {
+      // Fetch the list of doctors for the specified hospital
+      fetch(`http://localhost:5000/api/doctors/${hospitalName}`)
+        .then((response) => response.json())
+        .then((data) => setDoctors(data));
+    }
+  }, [hospitalName]);
 
   return (
     <div>
-      <h2 className="text-2xl font-semibold mb-4">List of Doctors</h2>
+      <h2 className="text-2xl font-semibold mb-4">
+        List of Doctors for {hospitalName}
+      </h2>
       <ul>
         {doctors.map((doctor, index) => (
           <li key={index} className="mb-4">
@@ -31,4 +37,4 @@ function DoctorList() {
   );
 }
 
-export default DoctorList;
+export default DoctorList2;
