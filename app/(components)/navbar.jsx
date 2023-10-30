@@ -1,17 +1,25 @@
 import Link from "next/link";
+import Image from 'next/image';
+
 function Navbar() {
   // added a comment by vampire
   return (
-    <nav className="bg-blue-500 p-4">
-      <ul className="flex space-x-4">
+    <nav className="bg-[#227C70] p-4">
+      <Image className="flex justify-between items-center"
+        src="/logo.png"
+        width={100}
+        height={100}
+        alt="VitalFlow"
+      />
+      <ul className="flex item-center gap-[4vw]">
         <li>
           <a href="/" className="text-white">
             Home
           </a>
         </li>
         <li>
-          <Link href="/addDocter" className="text-white">
-           Add docter
+          <Link href="/addDocter" className="text-white ">
+            Add docter
           </Link>
         </li>
         <li>
