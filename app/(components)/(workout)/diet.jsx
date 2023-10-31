@@ -30,8 +30,6 @@ function Diet() {
     { name: "Beef and Broccoli", calories: 350, protein: 20, isVeg: false },
     { name: "Tuna Salad", calories: 250, protein: 22, isVeg: false },
     { name: "Chicken Alfredo", calories: 400, protein: 30, isVeg: false },
-
-    // Add more food items here...
   ]);
 
   const [selectedItems, setSelectedItems] = useState([]);
@@ -48,40 +46,53 @@ function Diet() {
   };
 
   return (
-    <div className="container mx-auto p-4">
-      <h1 className="text-3xl font-bold mb-4">Diet Chart</h1>
-      <div className="mb-4">
-        <label className="block text-gray-700 text-sm font-bold mb-2">
-          Select your dietary preference:
-        </label>
-        <select
-          onChange={handleDietSelection}
-          className="border rounded w-full py-2 px-3"
-        >
-          <option value="veg">Vegetarian</option>
-          <option value="non-veg">Non-Vegetarian</option>
-        </select>
+    <div className=" p-4 mx-5 ml-5 bg-c1 shadow-md rounded">
+      <div className="flex justify-center">
+        <h1 className="text-2xl mb-4 text-c4 font-semibold">Diet Chart</h1>
       </div>
-      <button
-        onClick={generateDiet}
-        className="bg-blue-500 text-white py-2 px-4 rounded"
-      >
-        Generate Diet Plan
-      </button>
-      <div className="mt-4">
-        <h2 className="text-lg font-semibold mb-2">Your Diet Plan:</h2>
-        <table className="w-full">
+      <div className="mb-4 ">
+        <label className=" text-gray-700 text-sm font-bold mb-2 justify-center flex">
+          Select your dietary preference
+        </label>
+
+        <div className="flex justify-center">
+          <select
+            onChange={handleDietSelection}
+            className="border rounded w-full py-2 px-3 max-w-md bg-white text-black border-gray-300 focus:ring focus:ring-t3 focus:outline-none"
+          >
+            <option value="veg" className="py-2">
+              Vegetarian
+            </option>
+            <option value="non-veg" className="py-2">
+              Non-Vegetarian
+            </option>
+          </select>
+        </div>
+      </div>
+      <div className="flex justify-center">
+        <button
+          onClick={generateDiet}
+          className=" hover:bg-t4 text-white font-bold py-2 px-4 hover:text-c4 
+          hover:outline-double rounded-2xl
+        focus:outline-none focus:shadow-outline bg-c5"
+        >
+          Generate Diet Plan
+        </button>
+      </div>
+      <div className="mt-4 flex justify-center">
+        {/* <h2 className="text-lg font-semibold mb-2 text-c4">Your Diet Plan:</h2> */}
+        <table className="w-full bg-t3 mr-14 ml-14 ">
           <thead>
-            <tr>
-              <th className="text-left">Food Item</th>
+            <tr className="text-c3 ">
+              <th className="text-left pl-10">Food Item</th>
               <th className="text-left">Calories</th>
               <th className="text-left">Protein (g)</th>
             </tr>
           </thead>
           <tbody>
             {selectedItems.map((item, index) => (
-              <tr key={index}>
-                <td>{item.name}</td>
+              <tr key={index} className="">
+                <td className="pl-10">{item.name}</td>
                 <td>{item.calories}</td>
                 <td>{item.protein}</td>
               </tr>

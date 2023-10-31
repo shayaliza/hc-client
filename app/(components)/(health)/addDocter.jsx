@@ -61,7 +61,6 @@ function HospitalOwnerPage() {
       hospitalName,
     };
 
-    // Send the doctor data to the backend for saving.
     try {
       const response = await fetch(
         // `${process.env.NEXT_PUBLIC_BACK_END}api/upload-doctor`,
@@ -94,14 +93,13 @@ function HospitalOwnerPage() {
   }
 
   return (
-    <div className="max-w-md mx-auto mt-4 p-6 bg-white shadow-md rounded">
-      <h1 className="text-2xl font-semibold mb-4">Upload Doctor Information</h1>
+    <div className="max-w-2xl mx-auto mt-4 p-6 bg-c1 shadow-md rounded">
+      <h1 className="text-2xl font-semibold mb-4 text-c4">
+        Upload Doctor Information
+      </h1>
       <form onSubmit={handleDoctorSubmit}>
         <div className="mb-4">
-          <label
-            htmlFor="name"
-            className="block text-gray-600 text-sm font-semibold"
-          >
+          <label htmlFor="name" className="block text-c5 text-sm font-semibold">
             Doctor Name
           </label>
           <input
@@ -119,7 +117,7 @@ function HospitalOwnerPage() {
         <div className="mb-4">
           <label
             htmlFor="speciality"
-            className="block text-gray-600 text-sm font-semibold"
+            className="block text-c5 text-sm font-semibold"
           >
             Speciality
           </label>
@@ -136,10 +134,7 @@ function HospitalOwnerPage() {
           />
         </div>
         <div className="mb-4">
-          <label
-            htmlFor="time"
-            className="block text-gray-600 text-sm font-semibold"
-          >
+          <label htmlFor="time" className="block text-c5 text-sm font-semibold">
             Time
           </label>
           <input
@@ -157,7 +152,7 @@ function HospitalOwnerPage() {
         <div className="mb-4">
           <label
             htmlFor="daysAvailable"
-            className="block text-gray-600 text-sm font-semibold"
+            className="block text-c5 text-sm font-semibold"
           >
             Days Available
           </label>
@@ -176,7 +171,7 @@ function HospitalOwnerPage() {
         <div className="mb-4">
           <label
             htmlFor="hospitalName"
-            className="block text-gray-600 text-sm font-semibold"
+            className="block text-c5 text-sm font-semibold"
           >
             Hospital Name
           </label>
@@ -190,12 +185,19 @@ function HospitalOwnerPage() {
             required
           />
         </div>
-        <div className="mt-6">
+        {/* <div className="mt-6">
+          <button type="submit" className="bg-t1 text-c3 p-2 rounded w-full">
+            Upload Doctor Information
+          </button>
+        </div> */}
+        <div className="flex justify-center">
           <button
             type="submit"
-            className="bg-blue-500 text-white p-2 rounded w-full"
+            className=" hover:bg-t4 text-white font-bold py-2 px-4 hover:text-c4 
+          hover:outline-double rounded-2xl
+        focus:outline-none focus:shadow-outline bg-c5"
           >
-            Upload Doctor Information
+            Generate Diet Plan
           </button>
         </div>
       </form>

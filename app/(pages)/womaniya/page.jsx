@@ -12,44 +12,61 @@ function Page() {
 
   return (
     <>
-      <div className="w-full max-w-2xl mx-auto mt-5">
-        <div className="mb-4">
+      <div className=" mt-5">
+        <div className="mb-4  flex justify-center space-x-5">
           <button
-            className={`mr-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline ${
-              selectedTopic === "period calculator" ? "bg-blue-700" : ""
-            }`}
+            className={`mr-2 bg-t2 border border-solid border-t3
+           rounded-lg  hover:bg-c2 hover:text-t3
+           font-semibold py-4 px-6 focus:outline-none focus:shadow-outline 
+           transition duration-100 ease-in-out shadow-md select-none ${
+             selectedTopic === "period calculator"
+               ? " text-c4 bg-t3"
+               : " text-c3"
+           }`}
             onClick={() => setSelectedTopic("period calculator")}
           >
             Period Calculator
           </button>
           <button
-            className={`mr-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline ${
-              selectedTopic === "fertility" ? "bg-blue-700" : ""
-            }`}
+            className={`mr-2 bg-t2 border border-solid border-t3
+           rounded-lg  hover:bg-c2 hover:text-t3
+           font-semibold py-4 px-6 focus:outline-none focus:shadow-outline 
+           transition duration-100 ease-in-out shadow-md select-none ${
+             selectedTopic === "fertility" ? " text-c4 bg-t3" : " text-c3"
+           }`}
             onClick={() => setSelectedTopic("fertility")}
           >
             Fertility Blog
           </button>
           <button
-            className={`bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline ${
-              selectedTopic === "mensuration" ? "bg-blue-700" : ""
-            }`}
+            className={`mr-2 bg-t2 border border-solid border-t3
+           rounded-lg  hover:bg-c2 hover:text-t3
+           font-semibold py-4 px-6 focus:outline-none focus:shadow-outline 
+           transition duration-100 ease-in-out shadow-md select-none ${
+             selectedTopic === "mensuration" ? " text-c4 bg-t3" : " text-c3"
+           }`}
             onClick={() => setSelectedTopic("mensuration")}
           >
             Mensuration Blog
           </button>
           <button
-            className={`bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline ${
-              selectedTopic === "pregnancy" ? "bg-blue-700" : ""
-            }`}
+            className={`mr-2 bg-t2 border border-solid border-t3
+           rounded-lg  hover:bg-c2 hover:text-t3
+           font-semibold py-4 px-6 focus:outline-none focus:shadow-outline 
+           transition duration-100 ease-in-out shadow-md select-none ${
+             selectedTopic === "pregnancy" ? " text-c4 bg-t3" : " text-c3"
+           }`}
             onClick={() => setSelectedTopic("pregnancy")}
           >
             Pregnancy Blog
           </button>
           <button
-            className={`bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline ${
-              selectedTopic === "sex" ? "bg-blue-700" : ""
-            }`}
+            className={`mr-2 bg-t2 border border-solid border-t3
+           rounded-lg  hover:bg-c2 hover:text-t3
+           font-semibold py-4 px-6 focus:outline-none focus:shadow-outline 
+           transition duration-100 ease-in-out shadow-md select-none ${
+             selectedTopic === "sex" ? " text-c4 bg-t3" : " text-c3"
+           }`}
             onClick={() => setSelectedTopic("sex")}
           >
             Sex Blog

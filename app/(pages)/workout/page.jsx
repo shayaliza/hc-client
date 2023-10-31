@@ -11,35 +11,47 @@ function page() {
 
   return (
     <>
-      <div className="w-full max-w-2xl mx-auto mt-5">
-        <div className="mb-4">
+      <div className="w-full mx-auto mt-5 ">
+        <div className="mb-4 flex justify-center space-x-5">
           <button
-            className={`mr-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline ${
-              selectedTopic === "diet" ? "bg-blue-700" : ""
+            className={`mr-2 bg-t2 border border-solid border-t3
+            rounded-lg  hover:bg-c2 hover:text-t3
+            font-semibold py-4 px-6 focus:outline-none focus:shadow-outline 
+            transition duration-100 ease-in-out shadow-md select-none ${
+              selectedTopic === "diet" ? " text-c4 bg-t3" : " text-c3"
             }`}
             onClick={() => setSelectedTopic("diet")}
           >
             Diet
           </button>
           <button
-            className={`mr-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline ${
-              selectedTopic === "homeworkout" ? "bg-blue-700" : ""
+            className={`mr-2 bg-t2 border border-solid border-t3
+            rounded-lg  hover:bg-c2 hover:text-t3
+            font-semibold py-4 px-6 focus:outline-none focus:shadow-outline 
+            transition duration-100 ease-in-out shadow-md select-none ${
+              selectedTopic === "homeworkout" ? " text-c4 bg-t3" : " text-c3"
             }`}
             onClick={() => setSelectedTopic("homeworkout")}
           >
             Home Workout
           </button>
           <button
-            className={`bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline ${
-              selectedTopic === "yoga" ? "bg-blue-700" : ""
+            className={`mr-2 bg-t2 border border-solid border-t3
+            rounded-lg  hover:bg-c2 hover:text-t3
+            font-semibold py-4 px-6 focus:outline-none focus:shadow-outline 
+            transition duration-100 ease-in-out shadow-md select-none ${
+              selectedTopic === "yoga" ? " text-c4 bg-t3" : " text-c3"
             }`}
             onClick={() => setSelectedTopic("yoga")}
           >
             yoga
           </button>
           <button
-            className={`bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline ${
-              selectedTopic === "blog" ? "bg-blue-700" : ""
+            className={`mr-2 bg-t2 border border-solid border-t3
+            rounded-lg  hover:bg-c2 hover:text-t3
+            font-semibold py-4 px-6 focus:outline-none focus:shadow-outline 
+            transition duration-100 ease-in-out shadow-md select-none ${
+              selectedTopic === "blog" ? " text-c4 bg-t3" : " text-c3"
             }`}
             onClick={() => setSelectedTopic("blog")}
           >

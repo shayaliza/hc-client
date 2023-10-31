@@ -3,7 +3,7 @@ import React from "react";
 import { useState } from "react";
 
 function Yoga() {
-  const [selectedWorkout, setSelectedWorkout] = useState(null);
+  const [selectedWorkout, setSelectedWorkout] = useState("fullbody");
   const [selectedLevel, setSelectedLevel] = useState("beginner");
   const [exerciseResults, setExerciseResults] = useState([]);
 
@@ -50,21 +50,22 @@ function Yoga() {
     switch (level) {
       case "beginner":
         return [
-          { exercise: "Push-ups" },
-          { exercise: "Bodyweight Squats" },
-          { exercise: "Plank" },
+          //wrong format
+          { exercise: "balasana" },
+          { exercise: "Tadasana" },
+          { exercise: "Trikonasana" },
         ];
       case "intermediate":
         return [
-          { exercise: "Diamond Push-ups" },
-          { exercise: "Jump Squats" },
-          { exercise: "Side Plank" },
+          { exercise: "Utkatasana" },
+          { exercise: "Garudasana" },
+          { exercise: "Utthita parsvakonasana" },
         ];
       case "advanced":
         return [
-          { exercise: "One-Arm Push-ups" },
-          { exercise: "Pistol Squats" },
-          { exercise: "Plank with Leg Lift" },
+          { exercise: "Dhanurasana" },
+          { exercise: "Gomukhasana" },
+          { exercise: "Astavakrasana" },
         ];
       default:
         return [];
@@ -75,21 +76,21 @@ function Yoga() {
     switch (level) {
       case "beginner":
         return [
-          { exercise: "Push-ups" },
-          { exercise: "Bodyweight Squats" },
-          { exercise: "Plank" },
+          { exercise: "Halasana" },
+          { exercise: "chakraasana" },
+          { exercise: "Santolanasana" },
         ];
       case "intermediate":
         return [
-          { exercise: "Diamond Push-ups" },
-          { exercise: "Jump Squats" },
-          { exercise: "Side Plank" },
+          { exercise: "Vaisisthasana" },
+          { exercise: "Ustrasana" },
+          { exercise: "Eka padasana" },
         ];
       case "advanced":
         return [
-          { exercise: "One-Arm Push-ups" },
-          { exercise: "Pistol Squats" },
-          { exercise: "Plank with Leg Lift" },
+          { exercise: "Padahastasana" },
+          { exercise: "Hastha uttanasana" },
+          { exercise: "Bhujangasana" },
         ];
       default:
         return [];
@@ -100,21 +101,21 @@ function Yoga() {
     switch (level) {
       case "beginner":
         return [
-          { exercise: "Push-ups" },
-          { exercise: "Incline Dumbbell Press" },
-          { exercise: "Chest Flyes" },
+          { exercise: "Ustrasana" },
+          { exercise: "Sha-la-bahs asana" },
+          { exercise: "Salamba bhujangasana" },
         ];
       case "intermediate":
         return [
-          { exercise: "Wide Push-ups" },
-          { exercise: "Decline Push-ups" },
-          { exercise: "Cable Crossovers" },
+          { exercise: "Bhujanaasana" },
+          { exercise: "Bitilasana" },
+          { exercise: "Anjaneyasana" },
         ];
       case "advanced":
         return [
-          { exercise: "One-Arm Push-ups" },
-          { exercise: "Bench Press" },
-          { exercise: "Incline Dumbbell Flyes" },
+          { exercise: "adho mukhasana" },
+          { exercise: "Camatkarasana" },
+          { exercise: "parsva upavistha  konasana" },
         ];
       default:
         return [];
@@ -125,21 +126,21 @@ function Yoga() {
     switch (level) {
       case "beginner":
         return [
-          { exercise: "Push-ups" },
-          { exercise: "Bodyweight Squats" },
-          { exercise: "Plank" },
+          { exercise: "Ubhaya Padangusthasana" },
+          { exercise: "Supta Padangusthasana" },
+          { exercise: "Chaturanga Dandasana" },
         ];
       case "intermediate":
         return [
-          { exercise: "Diamond Push-ups" },
-          { exercise: "Jump Squats" },
-          { exercise: "Side Plank" },
+          { exercise: "Bakasana" },
+          { exercise: "Adho mukha vrkasana" },
+          { exercise: "Virbhadrasana II" },
         ];
       case "advanced":
         return [
-          { exercise: "One-Arm Push-ups" },
-          { exercise: "Pistol Squats" },
-          { exercise: "Plank with Leg Lift" },
+          { exercise: "Purvottanasana" },
+          { exercise: "Eka pada adho mukha svanasana" },
+          { exercise: "Urdhava mukhasana" },
         ];
       default:
         return [];
@@ -149,21 +150,21 @@ function Yoga() {
     switch (level) {
       case "beginner":
         return [
-          { exercise: "Bodyweight Squats" },
-          { exercise: "Lunges" },
-          { exercise: "Calf Raises" },
+          { exercise: "Supta padangusthasana" },
+          { exercise: "Janu sirsasana" },
+          { exercise: "Paschimottanasana" },
         ];
       case "intermediate":
         return [
-          { exercise: "Squats" },
-          { exercise: "Deadlifts" },
-          { exercise: "Leg Press" },
+          { exercise: "Upavistha konasana" },
+          { exercise: "Ardha chandrasana" },
+          { exercise: "Pariivrtta trikonasana" },
         ];
       case "advanced":
         return [
-          { exercise: "Pistol Squats" },
-          { exercise: "Hack Squats" },
-          { exercise: "Seated Calf Raises" },
+          { exercise: "Utthita Hasta Padangusthasana" },
+          { exercise: "Krounchasana" },
+          { exercise: "Svarga dvidasana" },
         ];
       default:
         return [];
@@ -174,23 +175,29 @@ function Yoga() {
     switch (level) {
       case "beginner":
         return [
-          { exercise: "Push-ups" },
-          { exercise: "Bodyweight Squats" },
-          { exercise: "Plank" },
+          { exercise: "salamba Bhujangasana" },
+          { exercise: "Ardha kapotasna" },
+          { exercise: "Marjaryasana" },
         ];
       case "intermediate":
         return [
-          { exercise: "Diamond Push-ups" },
-          { exercise: "Jump Squats" },
-          { exercise: "Side Plank" },
+          { exercise: "Apanasana" },
+          { exercise: "setu bandha sarvangasana" },
+          { exercise: "Utthan Pristhasana" },
         ];
       case "advanced":
         return [
-          { exercise: "One-Arm Push-ups" },
-          { exercise: "Pistol Squats" },
           {
-            exercise: "Plank with Leg Lift",
-            features: ["Chest workout", "Upper body strength"],
+            exercise: "Ardha matsyendrasana",
+            features: ["Chest workout Upper body strength"],
+          },
+          {
+            exercise: "Supta Padangusthasana",
+            features: ["Chest workout Upper body strength"],
+          },
+          {
+            exercise: "Paschimottansana",
+            features: ["Chest workout Upper body strength"],
           },
         ];
       default:
@@ -199,105 +206,269 @@ function Yoga() {
   };
 
   return (
-    <div className="container mx-auto p-4">
-      <h1 className="text-3xl font-bold mb-4">Yoga</h1>
+    // <div className="container mx-auto p-4">
+    //   <h1 className="text-3xl font-bold mb-4">Yoga</h1>
+    //   <div className="mb-4">
+    //     <label className="block text-gray-700 text-sm font-bold mb-2">
+    //       Select Yoga Type:
+    //     </label>
+    //     <div>
+    //       <button
+    //         onClick={() => handleWorkoutSelection("fullbody")}
+    //         className={`${
+    //           selectedWorkout === "fullbody" ? "bg-blue-500" : "bg-gray-300"
+    //         } text-white py-2 px-4 rounded mr-2`}
+    //       >
+    //         Full Body
+    //       </button>
+    //       <button
+    //         onClick={() => handleWorkoutSelection("abs")}
+    //         className={`${
+    //           selectedWorkout === "abs" ? "bg-blue-500" : "bg-gray-300"
+    //         } text-white py-2 px-4 rounded mr-2`}
+    //       >
+    //         Stomach
+    //       </button>
+    //       <button
+    //         onClick={() => handleWorkoutSelection("chest")}
+    //         className={`${
+    //           selectedWorkout === "chest" ? "bg-blue-500" : "bg-gray-300"
+    //         } text-white py-2 px-4 rounded mr-2`}
+    //       >
+    //         Chest
+    //       </button>
+    //       <button
+    //         onClick={() => handleWorkoutSelection("arms")}
+    //         className={`${
+    //           selectedWorkout === "arms" ? "bg-blue-500" : "bg-gray-300"
+    //         } text-white py-2 px-4 rounded mr-2`}
+    //       >
+    //         Arms
+    //       </button>
+    //       <button
+    //         onClick={() => handleWorkoutSelection("leg")}
+    //         className={`${
+    //           selectedWorkout === "leg" ? "bg-blue-500" : "bg-gray-300"
+    //         } text-white py-2 px-4 rounded mr-2`}
+    //       >
+    //         Legs
+    //       </button>
+    //       <button
+    //         onClick={() => handleWorkoutSelection("back")}
+    //         className={`${
+    //           selectedWorkout === "back" ? "bg-blue-500" : "bg-gray-300"
+    //         } text-white py-2 px-4 rounded mr-2`}
+    //       >
+    //         Back
+    //       </button>
+    //     </div>
+    //   </div>
+
+    //   <div className="mb-4">
+    //     <label className="block text-gray-700 text-sm font-bold mb-2">
+    //       Select Yoga Level:
+    //     </label>
+    //     <div>
+    //       <button
+    //         onClick={() => handleLevelSelection("beginner")}
+    //         className={`${
+    //           selectedLevel === "beginner" ? "bg-blue-500" : "bg-gray-300"
+    //         } text-white py-2 px-4 rounded mr-2`}
+    //       >
+    //         Beginner
+    //       </button>
+    //       <button
+    //         onClick={() => handleLevelSelection("intermediate")}
+    //         className={`${
+    //           selectedLevel === "intermediate" ? "bg-blue-500" : "bg-gray-300"
+    //         } text-white py-2 px-4 rounded mr-2`}
+    //       >
+    //         Intermediate
+    //       </button>
+    //       <button
+    //         onClick={() => handleLevelSelection("advanced")}
+    //         className={`${
+    //           selectedLevel === "advanced" ? "bg-blue-500" : "bg-gray-300"
+    //         } text-white py-2 px-4 rounded mr-2`}
+    //       >
+    //         Advanced
+    //       </button>
+    //     </div>
+    //   </div>
+
+    //   <button
+    //     onClick={generateExerciseResults}
+    //     className="bg-blue-500 text-white py-2 px-4 rounded"
+    //   >
+    //     Generate Yoga Results
+    //   </button>
+    <div className="mx-5 ml-5 p-4  bg-c1 shadow-md rounded">
+      <h1 className="text-2xl font-semibold mb-4 text-c4 flex justify-center">
+        Home Workout
+      </h1>
       <div className="mb-4">
-        <label className="block text-gray-700 text-sm font-bold mb-2">
-          Select Yoga Type:
+        <label className=" text-c5 text-sm font-bold mb-2 flex justify-center">
+          Select Workout Type
         </label>
-        <div>
+        <div className="flex justify-center space-x-3">
           <button
             onClick={() => handleWorkoutSelection("fullbody")}
-            className={`${
-              selectedWorkout === "fullbody" ? "bg-blue-500" : "bg-gray-300"
-            } text-white py-2 px-4 rounded mr-2`}
+            className={`
+          ${selectedWorkout === "fullbody" ? "bg-blue-500" : "bg-c1"}
+          py-4 px-6 border-2 border-solid
+           border-gray-300 rounded relative transition-opacity group 
+            focus:outline-none`}
           >
-            Full Body
+            <span className="z-10 relative">Full Body</span>
+            <span
+              className="absolute inset-0 bg-t3
+           origin-left transform scale-x-0 group-hover:scale-x-100
+            transition-transform"
+            ></span>
           </button>
           <button
             onClick={() => handleWorkoutSelection("abs")}
-            className={`${
-              selectedWorkout === "abs" ? "bg-blue-500" : "bg-gray-300"
-            } text-white py-2 px-4 rounded mr-2`}
+            className={`
+          ${selectedWorkout === "abs" ? "bg-blue-500" : "bg-c1"}
+          py-4 px-6 border-2 border-solid
+          border-gray-300 rounded relative transition-opacity group 
+           focus:outline-none`}
           >
-            Abs
+            <span className="z-10 relative">Stomach</span>
+            <span
+              className="absolute inset-0 bg-t3
+           origin-left transform scale-x-0 group-hover:scale-x-100
+            transition-transform"
+            ></span>
           </button>
           <button
             onClick={() => handleWorkoutSelection("chest")}
-            className={`${
-              selectedWorkout === "chest" ? "bg-blue-500" : "bg-gray-300"
-            } text-white py-2 px-4 rounded mr-2`}
+            className={`
+          ${selectedWorkout === "chest" ? "bg-blue-500" : "bg-c1"}
+           py-4 px-6 border-2 border-solid
+          border-gray-300 rounded relative transition-opacity group 
+           focus:outline-none`}
           >
-            Chest
+            <span className="z-10 relative">Chest</span>
+            <span
+              className="absolute inset-0 bg-t3
+           origin-left transform scale-x-0 group-hover:scale-x-100
+            transition-transform"
+            ></span>
           </button>
           <button
             onClick={() => handleWorkoutSelection("arms")}
-            className={`${
-              selectedWorkout === "arms" ? "bg-blue-500" : "bg-gray-300"
-            } text-white py-2 px-4 rounded mr-2`}
+            className={`
+          ${selectedWorkout === "arms" ? "bg-blue-500" : "bg-c1"}
+           py-4 px-6 border-2 border-solid
+          border-gray-300 rounded relative transition-opacity group 
+           focus:outline-none`}
           >
-            Arms
+            <span className="z-10 relative">Arms</span>
+            <span
+              className="absolute inset-0 bg-t3
+           origin-left transform scale-x-0 group-hover:scale-x-100
+            transition-transform"
+            ></span>
           </button>
           <button
             onClick={() => handleWorkoutSelection("leg")}
-            className={`${
-              selectedWorkout === "leg" ? "bg-blue-500" : "bg-gray-300"
-            } text-white py-2 px-4 rounded mr-2`}
+            className={`
+          ${selectedWorkout === "leg" ? "bg-blue-500" : "bg-c1"}
+          py-4 px-6 border-2 border-solid
+          border-gray-300 rounded relative transition-opacity group 
+           focus:outline-none`}
           >
-            Legs
+            <span className="z-10 relative">Legs</span>
+            <span
+              className="absolute inset-0 bg-t3
+           origin-left transform scale-x-0 group-hover:scale-x-100
+            transition-transform"
+            ></span>
           </button>
           <button
             onClick={() => handleWorkoutSelection("back")}
             className={`${
-              selectedWorkout === "back" ? "bg-blue-500" : "bg-gray-300"
-            } text-white py-2 px-4 rounded mr-2`}
+              selectedWorkout === "back" ? "bg-blue-500" : "bg-c1"
+            } py-4 px-6 border-2 border-solid
+          border-gray-300 rounded relative transition-opacity group 
+           focus:outline-none`}
           >
-            Back
+            <span className="z-10 relative">Back</span>
+            <span
+              className="absolute inset-0 bg-t3
+           origin-left transform scale-x-0 group-hover:scale-x-100
+            transition-transform"
+            ></span>
           </button>
         </div>
       </div>
 
       <div className="mb-4">
-        <label className="block text-gray-700 text-sm font-bold mb-2">
-          Select Yoga Level:
+        <label className=" text-c5 text-sm font-bold mb-2 flex justify-center">
+          Select Workout Level
         </label>
-        <div>
+        <div className="flex justify-center space-x-3">
           <button
             onClick={() => handleLevelSelection("beginner")}
             className={`${
-              selectedLevel === "beginner" ? "bg-blue-500" : "bg-gray-300"
-            } text-white py-2 px-4 rounded mr-2`}
+              selectedLevel === "beginner" ? "bg-blue-500" : "bg-c1"
+            } py-4 px-6 border-2 border-solid
+          border-gray-300 rounded relative transition-opacity group 
+           focus:outline-none`}
           >
-            Beginner
+            <span className="z-10 relative">Beginner</span>
+            <span
+              className="absolute inset-0 bg-t3
+           origin-left transform scale-x-0 group-hover:scale-x-100
+            transition-transform"
+            ></span>
           </button>
           <button
             onClick={() => handleLevelSelection("intermediate")}
             className={`${
-              selectedLevel === "intermediate" ? "bg-blue-500" : "bg-gray-300"
-            } text-white py-2 px-4 rounded mr-2`}
+              selectedLevel === "intermediate" ? "bg-blue-500" : "bg-c1"
+            } py-4 px-6 border-2 border-solid
+          border-gray-300 rounded relative transition-opacity group 
+           focus:outline-none`}
           >
-            Intermediate
+            <span className="z-10 relative">Intermediate</span>
+            <span
+              className="absolute inset-0 bg-t3
+           origin-left transform scale-x-0 group-hover:scale-x-100
+            transition-transform"
+            ></span>
           </button>
           <button
             onClick={() => handleLevelSelection("advanced")}
             className={`${
-              selectedLevel === "advanced" ? "bg-blue-500" : "bg-gray-300"
-            } text-white py-2 px-4 rounded mr-2`}
+              selectedLevel === "advanced" ? "bg-blue-500" : "bg-c1"
+            } py-4 px-6 border-2 border-solid
+          border-gray-300 rounded relative transition-opacity group 
+           focus:outline-none`}
           >
-            Advanced
+            <span className="z-10 relative">Advanced</span>
+            <span
+              className="absolute inset-0 bg-t3
+           origin-left transform scale-x-0 group-hover:scale-x-100
+            transition-transform"
+            ></span>
           </button>
         </div>
       </div>
+      <div className="flex justify-center">
+        <button
+          onClick={generateExerciseResults}
+          className=" hover:bg-t4 text-white font-bold py-2 px-4 hover:text-c4 
+      hover:outline-double rounded-2xl
+    focus:outline-none focus:shadow-outline bg-c5"
+        >
+          Generate Exercise Results
+        </button>
+      </div>
 
-      <button
-        onClick={generateExerciseResults}
-        className="bg-blue-500 text-white py-2 px-4 rounded"
-      >
-        Generate Yoga Results
-      </button>
-
-      <div className="mt-4">
-        <h2 className="text-lg font-semibold mb-2">Yoga Results:</h2>
+      <div className="mt-4 flex justify-center">
+        {/* <h2 className="text-lg font-semibold mb-2">Yoga Results:</h2> */}
         <ul className="list-disc pl-4">
           {exerciseResults.map((result, index) => (
             <li key={index}>

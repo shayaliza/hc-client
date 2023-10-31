@@ -13,16 +13,48 @@ function DoctorList() {
 
   return (
     <div>
-      <h2 className="text-2xl font-semibold mb-4">List of Doctors</h2>
-      <ul>
+      <div className="flex justify-center">
+        <h2 className="text-2xl font-semibold mb-4 text-c4">List of Doctors</h2>
+      </div>
+      <ul className="">
         {doctors.map((doctor, index) => (
           <li key={index} className="mb-4">
-            <div className="bg-white p-4 rounded shadow">
-              <h3 className="text-xl font-semibold">{doctor.name}</h3>
-              <p>Speciality: {doctor.speciality}</p>
-              <p>Time: {doctor.time}</p>
-              <p>Days Available: {doctor.daysAvailable}</p>
-              <p>Hospital: {doctor.hospitalName}</p>
+            <div className="bg-c1 p-4 rounded shadow">
+              <div className="flex justify-center">
+                {" "}
+                <h3 className="text-xl font-semibold text-c5 px-5 pb-3">
+                  {doctor.name}
+                </h3>
+              </div>
+              <div className="bg-t3 mx-4 mr-4 mb-3 px-5 pt-3 pb-3">
+                <div className="flex justify-center">
+                  <p>
+                    <span>Speciality: </span>
+                    {doctor.speciality}
+                  </p>
+                </div>
+                <div className="flex justify-center">
+                  {" "}
+                  <p>
+                    <span>Time: </span>
+                    {doctor.time}
+                  </p>
+                </div>
+                <div className="flex justify-center">
+                  {" "}
+                  <p>
+                    <span>Days Available: </span>
+                    {doctor.daysAvailable}
+                  </p>
+                </div>
+                <div className="flex justify-center">
+                  {" "}
+                  <p>
+                    <span>Hospital: </span>
+                    {doctor.hospitalName}
+                  </p>
+                </div>
+              </div>
             </div>
           </li>
         ))}

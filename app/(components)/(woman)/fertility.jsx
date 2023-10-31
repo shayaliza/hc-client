@@ -80,13 +80,19 @@ function Fertility() {
 
   return (
     <>
-      <div className="max-w-md mx-auto p-4 bg-gray-100 rounded-lg shadow-lg">
-        <h2 className="text-2xl font-bold mb-4">Fertility Blog</h2>
+      <div className="p-4 bg-gray-100 mx-5 ml-5 rounded-lg shadow-md">
+        <div className="flex justify-center">
+          <h2 className="text-2xl font-semibold text-c4 mb-4">
+            Fertility Blog
+          </h2>
+        </div>
 
         {questions.map((q) => (
           <div key={q.id} className="mb-4">
             <div
-              className="cursor-pointer flex justify-between items-center p-2 border rounded"
+              className="cursor-pointer flex justify-between items-center 
+            p-4 border border-gray-300 rounded shadow-md transition-transform
+             hover:scale-95 bg-t3 text-c5"
               onClick={() => toggleQuestion(q.id)}
             >
               <div className="font-semibold">{q.question}</div>
@@ -97,7 +103,9 @@ function Fertility() {
               )}
             </div>
             {openQuestions.includes(q.id) && (
-              <div className="bg-white p-2 border-t">{q.answer}</div>
+              <div className="bg-t2 text-c4 p-4 border-t border-gray-300">
+                {q.answer}
+              </div>
             )}
           </div>
         ))}

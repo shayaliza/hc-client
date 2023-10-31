@@ -25,9 +25,7 @@ function Bp() {
     };
 
     try {
-      // Send the new BP record to the backend
       await axios.post("http://localhost:5000/api/bpRecords", newRecord);
-      // Clear input fields
       setSysBP("");
       setDiaBP("");
     } catch (error) {
@@ -54,41 +52,66 @@ function Bp() {
     }
   };
   return (
-    <div className="container mx-auto mt-8">
-      <h1 className="text-3xl font-bold mb-4">BP Tracker for {userEmail}</h1>
-
-      <div className="mb-4">
-        <label className="block">Systolic BP:</label>
-        <input
-          type="number"
-          className="border p-2"
-          value={sysBP}
-          onChange={(e) => setSysBP(e.target.value)}
-        />
+    <div className="  max-w-full mx-auto mt-4 p-6 shadow-md rounded bg-c1">
+      <div className="flex justify-center">
+        {" "}
+        <h1 className="text-2xl font-semibold mb-4 text-c4">
+          BP Tracker for {userEmail}
+        </h1>
       </div>
 
       <div className="mb-4">
-        <label className="block">Diastolic BP:</label>
-        <input
-          type="number"
-          className="border p-2"
-          value={diaBP}
-          onChange={(e) => setDiaBP(e.target.value)}
-        />
+        <div className="flex justify-center">
+          <label className="block">Systolic BP:</label>
+        </div>
+        <div className="flex justify-center">
+          {" "}
+          <input
+            type="number"
+            className="border p-2"
+            value={sysBP}
+            onChange={(e) => setSysBP(e.target.value)}
+          />
+        </div>
       </div>
 
-      <button
-        className="bg-blue-500 text-white px-4 py-2"
-        onClick={saveBpRecord}
-      >
-        Save BP Record
-      </button>
+      <div className="mb-4">
+        <div className="flex justify-center">
+          {" "}
+          <label className="block">Diastolic BP:</label>
+        </div>
+        <div className="flex justify-center">
+          {" "}
+          <input
+            type="number"
+            className="border p-2 max-w-md"
+            value={diaBP}
+            onChange={(e) => setDiaBP(e.target.value)}
+          />
+        </div>
+      </div>
+
+      <div className="flex justify-center">
+        <button
+          onClick={saveBpRecord}
+          className=" hover:bg-t4 text-white font-bold py-2 px-4 hover:text-c4 
+          hover:outline-double rounded-2xl
+        focus:outline-none focus:shadow-outline bg-c5"
+        >
+          Generate Diet Plan
+        </button>
+      </div>
 
       <div className="mt-8">
-        <h2 className="text-2xl font-semibold">Previous BP Records:</h2>
+        <div className="flex justify-center">
+          {" "}
+          <h2 className="text-2xl font-semibold text-c4">
+            Previous BP Records
+          </h2>
+        </div>
         <ul>
           {bpRecords.map((record, index) => (
-            <li key={index}>
+            <li className="flex justify-evenly" key={index}>
               Systolic BP: {record.sysBP}, Diastolic BP: {record.diaBP}, Date:{" "}
               {record.date}
             </li>

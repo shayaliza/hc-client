@@ -76,12 +76,18 @@ function Bmi() {
           onChange={(e) => setHeight(e.target.value)}
         />
       </div>
-      <button
-        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-        onClick={calculateBMI}
-      >
-        Calculate BMI
-      </button>
+
+      <div className="flex justify-center">
+        <button
+          onClick={calculateBMI}
+          className=" hover:bg-t4 text-white font-bold py-2 px-4 hover:text-c4 
+          hover:outline-double rounded-2xl
+        focus:outline-none focus:shadow-outline bg-c5"
+        >
+          Generate Diet Plan
+        </button>
+      </div>
+
       <div className="mt-4">
         <strong>Your BMI: {bmi}</strong>
       </div>

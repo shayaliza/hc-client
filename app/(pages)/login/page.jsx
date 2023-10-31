@@ -17,7 +17,6 @@ function LoginForm() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
-    // Check if the user is already logged in
     const authToken = Cookies.get("authToken");
     if (authToken) {
       setIsLoggedIn(true);

@@ -162,12 +162,16 @@ function Calorie() {
           </option>
         </select>
       </div>
-      <button
-        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-        onClick={calculateCalories}
-      >
-        Calculate Calories
-      </button>
+      <div className="flex justify-center">
+        <button
+          onClick={calculateCalories}
+          className=" hover:bg-t4 text-white font-bold py-2 px-4 hover:text-c4 
+          hover:outline-double rounded-2xl
+        focus:outline-none focus:shadow-outline bg-c5"
+        >
+          Generate Diet Plan
+        </button>
+      </div>
       <div className="mt-4">
         <strong>Your Daily Caloric Needs: {calories} calories</strong>
       </div>

@@ -104,12 +104,18 @@ function Bodyfat() {
           onChange={(e) => setHeight(e.target.value)}
         />
       </div>
-      <button
-        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-        onClick={calculateBodyFat}
-      >
-        Calculate Body Fat
-      </button>
+
+      <div className="flex justify-center">
+        <button
+          onClick={calculateBodyFat}
+          className=" hover:bg-t4 text-white font-bold py-2 px-4 hover:text-c4 
+          hover:outline-double rounded-2xl
+        focus:outline-none focus:shadow-outline bg-c5"
+        >
+          Generate Diet Plan
+        </button>
+      </div>
+
       <div className="mt-4">
         <strong>Your Body Fat Percentage: {bodyFat}%</strong>
       </div>
