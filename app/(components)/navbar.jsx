@@ -2,11 +2,8 @@
 import Link from "next/link";
 // import Image from "next/image";
 import { useState } from "react";
-// import { useRouter } from "next/navigation";
 
-// export default Navbar;
 function Navbar() {
-  // const router = useRouter();
   const [menuOpen, setMenuOpen] = useState(false);
   const [route, setRoute] = useState("/home");
 
@@ -18,13 +15,9 @@ function Navbar() {
     setMenuOpen(false);
   };
 
-  // const isMenuItemActive = (path) => {
-  //   return router.pathname === path;
-  // };
-
   return (
-    <nav className="bg-c3 p-4">
-      <div className="flex justify-between items-center md:hidden">
+    <nav className="bg-c3 p-4 flex justify-center items-center">
+      <div className="flex justify items-center md:hidden">
         <Link href="/" className="text-c2">
           Your Logo
         </Link>
@@ -34,7 +27,11 @@ function Navbar() {
       </div>
 
       {/* Responsive menu */}
-      <ul className={`${menuOpen ? "block" : "hidden"} md:flex md:space-x-4`}>
+      <ul
+        className={`${
+          menuOpen ? "block" : "hidden"
+        } md:flex md:space-x-4  flex-1`}
+      >
         <li>
           <a
             href="/"
@@ -117,6 +114,34 @@ function Navbar() {
         </li>
         <li>
           <Link
+            href="/mentalHealth"
+            passHref
+            className={`
+            ${route === "/mentalHealth" ? "text-c1" : " text-c2"}`}
+            onClick={() => {
+              closeMenu();
+              setRoute("/mentalHealth");
+            }}
+          >
+            Mental Health
+          </Link>
+        </li>
+        <li>
+          <Link
+            href="/game"
+            passHref
+            className={`
+            ${route === "/game" ? "text-c1" : " text-c2"}`}
+            onClick={() => {
+              closeMenu();
+              setRoute("/game");
+            }}
+          >
+            Game
+          </Link>
+        </li>
+        <li>
+          <Link
             href="/login"
             passHref
             className={` 
@@ -143,7 +168,9 @@ function Navbar() {
             Signup
           </Link>
         </li>
+        {/* <li className="ml-auto">Vital Flow</li> */}
       </ul>
+      <span className="ml-auto ">Vital Flow</span>
     </nav>
   );
 }

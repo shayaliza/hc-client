@@ -106,14 +106,12 @@ router.post("/upload-doctor", async (req, res) => {
 });
 router.get("/get-all-doctors", async (req, res) => {
   try {
-    // Find all doctors in the Doctor collection
     const doctors = await Doctor.find();
 
     if (!doctors || doctors.length === 0) {
       return res.status(404).json({ message: "No doctors found" });
     }
 
-    // Return the list of doctors
     res.json(doctors);
   } catch (error) {
     console.error("Error getting all doctors:", error);

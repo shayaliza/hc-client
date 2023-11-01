@@ -50,22 +50,48 @@ function Yoga() {
     switch (level) {
       case "beginner":
         return [
-          //wrong format
-          { exercise: "balasana" },
-          { exercise: "Tadasana" },
-          { exercise: "Trikonasana" },
+          {
+            exercise: "balasana",
+            features: ["fullbody strength"],
+          },
+          {
+            exercise: "Tadasana",
+            features: ["fullbody strength"],
+          },
+          {
+            exercise: "Trikonasana",
+            features: ["fullbody strength"],
+          },
         ];
       case "intermediate":
         return [
-          { exercise: "Utkatasana" },
-          { exercise: "Garudasana" },
-          { exercise: "Utthita parsvakonasana" },
+          {
+            exercise: "Utkatasana",
+            features: ["fullbody strength"],
+          },
+          {
+            exercise: "Garudasana",
+            features: ["fullbody strength"],
+          },
+          {
+            exercise: "Utthita parsvakonasana",
+            features: ["fullbody strength"],
+          },
         ];
       case "advanced":
         return [
-          { exercise: "Dhanurasana" },
-          { exercise: "Gomukhasana" },
-          { exercise: "Astavakrasana" },
+          {
+            exercise: "Dhanurasana",
+            features: ["fullbody strength"],
+          },
+          {
+            exercise: "Gomukhasana",
+            features: ["fullbody strength"],
+          },
+          {
+            exercise: "Astavakrasana",
+            features: ["fullbosdy strength"],
+          },
         ];
       default:
         return [];
@@ -76,21 +102,48 @@ function Yoga() {
     switch (level) {
       case "beginner":
         return [
-          { exercise: "Halasana" },
-          { exercise: "chakraasana" },
-          { exercise: "Santolanasana" },
+          {
+            exercise: "Halasana",
+            features: ["stomach workout abdomin strength"],
+          },
+          {
+            exercise: "chakraasana",
+            features: ["stomach workout abdomin strength"],
+          },
+          {
+            exercise: "Santolanasana",
+            features: ["stomach workout abdomin strength"],
+          },
         ];
       case "intermediate":
         return [
-          { exercise: "Vaisisthasana" },
-          { exercise: "Ustrasana" },
-          { exercise: "Eka padasana" },
+          {
+            exercise: "Vaisisthasana",
+            features: ["stomach workout abdomin strength"],
+          },
+          {
+            exercise: "Ustrasana",
+            features: ["stomach workout abdomin strength"],
+          },
+          {
+            exercise: "Eka padasana",
+            features: ["stomach workout abdomin strength"],
+          },
         ];
       case "advanced":
         return [
-          { exercise: "Padahastasana" },
-          { exercise: "Hastha uttanasana" },
-          { exercise: "Bhujangasana" },
+          {
+            exercise: "Padahastasana",
+            features: ["stomach workout abdomin strength"],
+          },
+          {
+            exercise: "Hastha uttanasana",
+            features: ["stomach workout abdomin strength"],
+          },
+          {
+            exercise: "Bhujangasana",
+            features: ["stomach workout abdomin strength"],
+          },
         ];
       default:
         return [];
@@ -101,46 +154,100 @@ function Yoga() {
     switch (level) {
       case "beginner":
         return [
-          { exercise: "Ustrasana" },
-          { exercise: "Sha-la-bahs asana" },
-          { exercise: "Salamba bhujangasana" },
+          {
+            exercise: "Ustrasana",
+            features: ["chest workout thoracic region strength"],
+          },
+          {
+            exercise: "Sha-la-bahs asana",
+            features: ["chest workout thoracic region strength"],
+          },
+          {
+            exercise: "Salamba bhujangasana",
+            features: ["chesst workout thoracic region strength"],
+          },
         ];
       case "intermediate":
         return [
-          { exercise: "Bhujanaasana" },
-          { exercise: "Bitilasana" },
-          { exercise: "Anjaneyasana" },
+          {
+            exercise: "Bhujanaasana",
+
+            features: ["chest workout thoracic region strength"],
+          },
+          {
+            exercise: "Bitilasana",
+            features: ["chest workout thoracic region strength"],
+          },
+          {
+            exercise: "Anjaneyasana",
+            features: ["chest workout thoracic region strength"],
+          },
         ];
       case "advanced":
         return [
-          { exercise: "adho mukhasana" },
-          { exercise: "Camatkarasana" },
-          { exercise: "parsva upavistha  konasana" },
+          {
+            exercise: "adho mukhasana",
+            features: ["chest workout thoracic region strength"],
+          },
+          {
+            exercise: "Camatkarasana",
+            features: ["chest workout thoracic region strength"],
+          },
+          {
+            exercise: "parsva upavistha  konasana",
+            features: ["chest workout thoracic region strength"],
+          },
         ];
       default:
         return [];
     }
   };
-
   const getArmsExercises = (level) => {
     switch (level) {
       case "beginner":
         return [
-          { exercise: "Ubhaya Padangusthasana" },
-          { exercise: "Supta Padangusthasana" },
-          { exercise: "Chaturanga Dandasana" },
+          {
+            exercise: "Ubhaya Padangusthasana",
+            features: ["Arms workout Arm and shoulder muscle strength"],
+          },
+          {
+            exercise: "Supta Padangusthasana",
+            features: ["Arms workout Arm and shoulder muscle strength"],
+          },
+          {
+            exercise: "Chaturanga Dandasana",
+            features: ["Arms workout Arm and shoulder muscle strength"],
+          },
         ];
       case "intermediate":
         return [
-          { exercise: "Bakasana" },
-          { exercise: "Adho mukha vrkasana" },
-          { exercise: "Virbhadrasana II" },
+          {
+            exercise: "Bakasana",
+            features: ["Arms workout Arm and shoulder muscle strength"],
+          },
+          {
+            exercise: "Adho mukha vrkasana",
+            features: ["Arms workout Arm and shoulder muscle strength"],
+          },
+          {
+            exercise: "Virbhadrasana II",
+            features: ["Arms workout Arm and shoulder muscle strength"],
+          },
         ];
       case "advanced":
         return [
-          { exercise: "Purvottanasana" },
-          { exercise: "Eka pada adho mukha svanasana" },
-          { exercise: "Urdhava mukhasana" },
+          {
+            exercise: "Purvottanasana",
+            features: ["Arms workout Arm and shoulder muscle strength"],
+          },
+          {
+            exercise: "Eka pada adho mukha svanasana",
+            features: ["Arms workout Arm and shoulder muscle strength"],
+          },
+          {
+            exercise: "Urdhava mukhasana",
+            features: ["Arms workout Arm and shoulder muscle strength"],
+          },
         ];
       default:
         return [];
@@ -150,21 +257,48 @@ function Yoga() {
     switch (level) {
       case "beginner":
         return [
-          { exercise: "Supta padangusthasana" },
-          { exercise: "Janu sirsasana" },
-          { exercise: "Paschimottanasana" },
+          {
+            exercise: "Supta padangusthasana",
+            features: ["Leg workout calf and thigh muscle strength"],
+          },
+          {
+            exercise: "Janu sirsasana",
+            features: ["Leg workout calf and thigh muscle strength"],
+          },
+          {
+            exercise: "Paschimottanasana",
+            features: ["Leg workout calf and thigh muscle strength"],
+          },
         ];
       case "intermediate":
         return [
-          { exercise: "Upavistha konasana" },
-          { exercise: "Ardha chandrasana" },
-          { exercise: "Pariivrtta trikonasana" },
+          {
+            exercise: "Upavistha konasana",
+            features: ["Leg workout calf and thigh muscle strength"],
+          },
+          {
+            exercise: "Ardha chandrasana",
+            features: ["Leg workout calf and thigh muscle strength"],
+          },
+          {
+            exercise: "Pariivrtta trikonasana",
+            features: ["Leg workout calf and thigh muscle strength"],
+          },
         ];
       case "advanced":
         return [
-          { exercise: "Utthita Hasta Padangusthasana" },
-          { exercise: "Krounchasana" },
-          { exercise: "Svarga dvidasana" },
+          {
+            exercise: "Utthita Hasta Padangusthasana",
+            features: ["Leg workout calf and thigh muscle strength"],
+          },
+          {
+            exercise: "Krounchasana",
+            features: ["Leg workout calf and thigh muscle strength"],
+          },
+          {
+            exercise: "Svarga dvidasana",
+            features: ["Leg workout calf and thigh muscle strength"],
+          },
         ];
       default:
         return [];
@@ -175,133 +309,54 @@ function Yoga() {
     switch (level) {
       case "beginner":
         return [
-          { exercise: "salamba Bhujangasana" },
-          { exercise: "Ardha kapotasna" },
-          { exercise: "Marjaryasana" },
+          {
+            exercise: "salamba Bhujangasana",
+            features: ["Back workout neck to waist muscles strength"],
+          },
+          {
+            exercise: "Ardha kapotasna",
+            features: ["Back workout neck to waist muscles strength"],
+          },
+          {
+            exercise: "Marjaryasana",
+            features: ["Back workout neck to waist muscles strength"],
+          },
         ];
       case "intermediate":
         return [
-          { exercise: "Apanasana" },
-          { exercise: "setu bandha sarvangasana" },
-          { exercise: "Utthan Pristhasana" },
+          {
+            exercise: "Apanasana",
+            features: ["Back workout neck to waist muscles strength"],
+          },
+          {
+            exercise: "setu bandha sarvangasana",
+            features: ["Back workout neck to waist muscles strength"],
+          },
+          {
+            exercise: "Utthan Pristhasana",
+            features: ["Back workout neck to waist muscles strength"],
+          },
         ];
       case "advanced":
         return [
           {
             exercise: "Ardha matsyendrasana",
-            features: ["Chest workout Upper body strength"],
+            features: ["Back workout neck to waist muscles strength"],
           },
           {
             exercise: "Supta Padangusthasana",
-            features: ["Chest workout Upper body strength"],
+            features: ["Back workout neck to waist muscles strength"],
           },
           {
             exercise: "Paschimottansana",
-            features: ["Chest workout Upper body strength"],
+            features: ["Back workout neck to waist muscles strength"],
           },
         ];
       default:
         return [];
     }
   };
-
   return (
-    // <div className="container mx-auto p-4">
-    //   <h1 className="text-3xl font-bold mb-4">Yoga</h1>
-    //   <div className="mb-4">
-    //     <label className="block text-gray-700 text-sm font-bold mb-2">
-    //       Select Yoga Type:
-    //     </label>
-    //     <div>
-    //       <button
-    //         onClick={() => handleWorkoutSelection("fullbody")}
-    //         className={`${
-    //           selectedWorkout === "fullbody" ? "bg-blue-500" : "bg-gray-300"
-    //         } text-white py-2 px-4 rounded mr-2`}
-    //       >
-    //         Full Body
-    //       </button>
-    //       <button
-    //         onClick={() => handleWorkoutSelection("abs")}
-    //         className={`${
-    //           selectedWorkout === "abs" ? "bg-blue-500" : "bg-gray-300"
-    //         } text-white py-2 px-4 rounded mr-2`}
-    //       >
-    //         Stomach
-    //       </button>
-    //       <button
-    //         onClick={() => handleWorkoutSelection("chest")}
-    //         className={`${
-    //           selectedWorkout === "chest" ? "bg-blue-500" : "bg-gray-300"
-    //         } text-white py-2 px-4 rounded mr-2`}
-    //       >
-    //         Chest
-    //       </button>
-    //       <button
-    //         onClick={() => handleWorkoutSelection("arms")}
-    //         className={`${
-    //           selectedWorkout === "arms" ? "bg-blue-500" : "bg-gray-300"
-    //         } text-white py-2 px-4 rounded mr-2`}
-    //       >
-    //         Arms
-    //       </button>
-    //       <button
-    //         onClick={() => handleWorkoutSelection("leg")}
-    //         className={`${
-    //           selectedWorkout === "leg" ? "bg-blue-500" : "bg-gray-300"
-    //         } text-white py-2 px-4 rounded mr-2`}
-    //       >
-    //         Legs
-    //       </button>
-    //       <button
-    //         onClick={() => handleWorkoutSelection("back")}
-    //         className={`${
-    //           selectedWorkout === "back" ? "bg-blue-500" : "bg-gray-300"
-    //         } text-white py-2 px-4 rounded mr-2`}
-    //       >
-    //         Back
-    //       </button>
-    //     </div>
-    //   </div>
-
-    //   <div className="mb-4">
-    //     <label className="block text-gray-700 text-sm font-bold mb-2">
-    //       Select Yoga Level:
-    //     </label>
-    //     <div>
-    //       <button
-    //         onClick={() => handleLevelSelection("beginner")}
-    //         className={`${
-    //           selectedLevel === "beginner" ? "bg-blue-500" : "bg-gray-300"
-    //         } text-white py-2 px-4 rounded mr-2`}
-    //       >
-    //         Beginner
-    //       </button>
-    //       <button
-    //         onClick={() => handleLevelSelection("intermediate")}
-    //         className={`${
-    //           selectedLevel === "intermediate" ? "bg-blue-500" : "bg-gray-300"
-    //         } text-white py-2 px-4 rounded mr-2`}
-    //       >
-    //         Intermediate
-    //       </button>
-    //       <button
-    //         onClick={() => handleLevelSelection("advanced")}
-    //         className={`${
-    //           selectedLevel === "advanced" ? "bg-blue-500" : "bg-gray-300"
-    //         } text-white py-2 px-4 rounded mr-2`}
-    //       >
-    //         Advanced
-    //       </button>
-    //     </div>
-    //   </div>
-
-    //   <button
-    //     onClick={generateExerciseResults}
-    //     className="bg-blue-500 text-white py-2 px-4 rounded"
-    //   >
-    //     Generate Yoga Results
-    //   </button>
     <div className="mx-5 ml-5 p-4  bg-c1 shadow-md rounded">
       <h1 className="text-2xl font-semibold mb-4 text-c4 flex justify-center">
         Home Workout

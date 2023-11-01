@@ -1,8 +1,6 @@
 // HospitalDoctors.js
 "use client";
 import React, { useState } from "react";
-import Link from "next/link";
-import { useEffect } from "react";
 
 const HospitalDoctors = ({ hospitalName }) => {
   console.log("Hospital Name:", hospitalName);

@@ -98,7 +98,7 @@ function Bp() {
           hover:outline-double rounded-2xl
         focus:outline-none focus:shadow-outline bg-c5"
         >
-          Generate Diet Plan
+          Save BP
         </button>
       </div>
 
