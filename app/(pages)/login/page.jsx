@@ -129,12 +129,17 @@ function LoginForm() {
         <div>
           <p>You are already logged in.</p>
           {/* Add a logout button */}
-          <button
-            onClick={handleLogout}
-            className="bg-red-500 text-white p-2 rounded w-full mt-4"
-          >
-            Log Out
-          </button>
+          <div className="flex justify-center">
+            {" "}
+            <button
+              onClick={handleLogout}
+              className=" hover:bg-t4 text-white font-bold py-2 px-10 hover:text-c4 
+            hover:outline-double rounded-2xl
+          focus:outline-none focus:shadow-outline bg-c5"
+            >
+              Log Out
+            </button>
+          </div>
         </div>
       ) : (
         // If the user is not logged in, show the login form
@@ -240,10 +245,13 @@ function LoginForm() {
             </div>
           )}
 
-          <div className="mt-6">
+          <div className="mt-6 flex justify-center">
             <button
               type="submit"
-              className="bg-blue-500 text-white p-2 rounded w-full"
+              // className="bg-blue-500 text-white p-2 rounded w-full"
+              className=" hover:bg-t4 text-white font-bold py-2 px-10 hover:text-c4 
+              hover:outline-double rounded-2xl
+            focus:outline-none focus:shadow-outline bg-c5"
             >
               Log In
             </button>

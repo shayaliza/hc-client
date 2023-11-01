@@ -1,5 +1,5 @@
 // SignupForm.jsx
-"use client"
+"use client";
 import React, { useState } from "react";
 import Link from "next/link";
 import { toast, ToastContainer } from "react-toastify";
@@ -58,8 +58,8 @@ function SignupForm() {
     // Check if the username already exists
     const usernameExistsResponse = await fetch(
       // `${process.env.NEXT_PUBLIC_BACK_END}api/check-username?username=${userData.username}`
-    //  "http://localhost:5000/api/check-username?username=${userData.username}"
-    `http://localhost:5000/api/check-username?username=${userData.username}`
+      //  "http://localhost:5000/api/check-username?username=${userData.username}"
+      `http://localhost:5000/api/check-username?username=${userData.username}`
     );
 
     if (usernameExistsResponse.ok) {
@@ -79,7 +79,7 @@ function SignupForm() {
         "http://localhost:5000/api/signup",
 
         // `${process.env.NEXT_PUBLIC_BACK_END}api/signup`,
-        
+
         {
           method: "POST",
           headers: {
@@ -112,14 +112,19 @@ function SignupForm() {
     <div className="max-w-md mx-auto mt-4 p-6 bg-white shadow-md rounded">
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
-          <label htmlFor="userType" className="block text-gray-600 text-sm font-semibold">
+          <label
+            htmlFor="userType"
+            className="block text-gray-600 text-sm font-semibold"
+          >
             Choose User Type
           </label>
           <select
             id="userType"
             name="userType"
             value={userData.userType}
-            onChange={(e) => setUserData({ ...userData, userType: e.target.value })}
+            onChange={(e) =>
+              setUserData({ ...userData, userType: e.target.value })
+            }
             className="w-full p-2 border border-gray-300 rounded mt-2"
             required
           >
@@ -132,7 +137,10 @@ function SignupForm() {
         {userData.userType === "hospital" && (
           <div>
             <div className="mb-4">
-              <label htmlFor="hospitalName" className="block text-gray-600 text-sm font-semibold">
+              <label
+                htmlFor="hospitalName"
+                className="block text-gray-600 text-sm font-semibold"
+              >
                 Hospital Name
               </label>
               <input
@@ -140,13 +148,18 @@ function SignupForm() {
                 id="hospitalName"
                 name="hospitalName"
                 value={userData.hospitalName}
-                onChange={(e) => setUserData({ ...userData, hospitalName: e.target.value })}
+                onChange={(e) =>
+                  setUserData({ ...userData, hospitalName: e.target.value })
+                }
                 className="w-full p-2 border border-gray-300 rounded mt-2"
                 required
               />
             </div>
             <div className="mb-4">
-              <label htmlFor="address" className="block text-gray-600 text-sm font-semibold">
+              <label
+                htmlFor="address"
+                className="block text-gray-600 text-sm font-semibold"
+              >
                 Address
               </label>
               <input
@@ -154,13 +167,18 @@ function SignupForm() {
                 id="address"
                 name="address"
                 value={userData.address}
-                onChange={(e) => setUserData({ ...userData, address: e.target.value })}
+                onChange={(e) =>
+                  setUserData({ ...userData, address: e.target.value })
+                }
                 className="w-full p-2 border border-gray-300 rounded mt-2"
                 required
               />
             </div>
             <div className="mb-4">
-              <label htmlFor="phoneNumber" className="block text-gray-600 text-sm font-semibold">
+              <label
+                htmlFor="phoneNumber"
+                className="block text-gray-600 text-sm font-semibold"
+              >
                 Phone Number
               </label>
               <input
@@ -168,7 +186,9 @@ function SignupForm() {
                 id="phoneNumber"
                 name="phoneNumber"
                 value={userData.phoneNumber}
-                onChange={(e) => setUserData({ ...userData, phoneNumber: e.target.value })}
+                onChange={(e) =>
+                  setUserData({ ...userData, phoneNumber: e.target.value })
+                }
                 className="w-full p-2 border border-gray-300 rounded mt-2"
                 required
               />
@@ -178,7 +198,10 @@ function SignupForm() {
 
         {/* Common fields for both user types */}
         <div className="mb-4">
-          <label htmlFor="username" className="block text-gray-600 text-sm font-semibold">
+          <label
+            htmlFor="username"
+            className="block text-gray-600 text-sm font-semibold"
+          >
             Username
           </label>
           <input
@@ -201,7 +224,10 @@ function SignupForm() {
         </div>
 
         <div className="mb-4">
-          <label htmlFor="email" className="block text-gray-600 text-sm font-semibold">
+          <label
+            htmlFor="email"
+            className="block text-gray-600 text-sm font-semibold"
+          >
             Email
           </label>
           <input
@@ -224,7 +250,10 @@ function SignupForm() {
         </div>
 
         <div className="mb-4">
-          <label htmlFor="password" className="block text-gray-600 text-sm font-semibold">
+          <label
+            htmlFor="password"
+            className="block text-gray-600 text-sm font-semibold"
+          >
             Password
           </label>
           <input
@@ -240,15 +269,27 @@ function SignupForm() {
             required
           />
           <div className="password-strength">
-            <progress max="4" value={passwordStrength} className={`strength-${passwordStrength}`} />
+            <progress
+              max="4"
+              value={passwordStrength}
+              className={`strength-${passwordStrength}`}
+            />
             <p>Password Strength: {getStrengthLabel(passwordStrength)}</p>
           </div>
         </div>
 
         <div className="mt-6">
-          <button type="submit" className="bg-blue-500 text-white p-2 rounded w-full">
-            Sign Up
-          </button>
+          <div className="flex justify-center">
+            {" "}
+            <button
+              type="submit"
+              className=" hover:bg-t4 text-white font-bold py-2 px-10 hover:text-c4 
+          hover:outline-double rounded-2xl
+        focus:outline-none focus:shadow-outline bg-c5"
+            >
+              Sign Up
+            </button>
+          </div>
         </div>
       </form>
       <div>
