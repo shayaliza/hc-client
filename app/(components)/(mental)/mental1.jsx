@@ -7,69 +7,69 @@ function Mental1() {
   const questions = [
     {
       id: 1,
-      question: "What are the key principles of yoga exercises?",
+      question:
+        "What is the importance of mental health in overall well-being?",
       answer:
-        "The key principles of yoga exercises include breath control (pranayama), physical postures (asanas), meditation, and ethical guidelines (yamas and niyamas)",
+        "Good mental health is essential for our overall well-being, influencing our thoughts, feelings, and actions, as well as our relationships and daily life.",
     },
     {
       id: 2,
-      question: " How can yoga exercises improve physical health?",
+      question: "How can I manage stress in my daily life?",
       answer:
-        "Yoga exercises can improve physical health by enhancing flexibility, strength, balance, and posture. They can also help with weight management and reduce the risk of injuries.",
+        "Stress management includes relaxation techniques, physical activity, balanced diet, setting boundaries, and seeking social support.",
     },
     {
       id: 3,
-      question: "What are some beginner-friendly yoga exercises to start with?",
+      question: "What are the signs of anxiety, and how can I cope with it?",
       answer:
-        "Beginners can start with basic poses like Mountain Pose, Child's Pose, Downward-Facing Dog, and Cobra Pose to build a foundation in yoga.",
+        "Anxiety signs include worry, restlessness, irritability, and physical symptoms. Coping strategies include deep breathing and mindfulness.",
     },
     {
       id: 4,
-      question:
-        "Are there yoga exercises specifically designed for stress relief?",
+      question: "What is the difference between sadness and depression?",
       answer:
-        "Yes, yoga exercises like Savasana Corpse Pose, Balasana Child's Pose, and Anulom Vilom (Alternate Nostril Breathing) are effective for stress relief",
+        "Sadness is a normal response to events, while depression is a persistent mood disorder with symptoms like hopelessness and loss of interest.",
     },
     {
       id: 5,
       question:
-        "Can yoga exercises help with back pain and posture improvement?",
+        "How can I support a friend or family member struggling with their mental health?",
       answer:
-        "Yoga exercises can strengthen the core and back muscles, relieving back pain and promoting better posture. Poses like Cat-Cow and Bridge Pose are beneficial.",
+        "Offer a non-judgmental ear, express empathy, encourage seeking professional help, and provide information about available resources.",
     },
     {
       id: 6,
-      question:
-        " Is yoga suitable for weight loss, and which poses are effective for this goal?",
+      question: "What is self-care, and why is it important for mental health?",
       answer:
-        "Yoga can aid in weight loss by increasing metabolism and promoting mindfulness. Poses like Warrior II, Boat Pose, and Plank can be effective.",
+        "Self-care includes activities like relaxation, hobbies, and exercise. It's vital for reducing stress and preventing burnout.",
     },
     {
       id: 7,
-      question: "How can seniors or older adults benefit from yoga exercises?",
+      question:
+        "What are some effective techniques for improving sleep quality and mental well-being?",
       answer:
-        "Seniors can benefit from yoga by improving flexibility, balance, and joint mobility. Gentle poses like Chair Yoga and Tree Pose are great for older adults.",
+        "Techniques for better sleep include a consistent schedule, a comfortable sleep environment, and avoiding stimulants. Quality sleep is vital for mental health.",
     },
     {
       id: 8,
       question:
-        "Are there specific yoga exercises for athletes and sports enthusiasts?",
+        "How can I build resilience to better handle life's challenges?",
       answer:
-        "Yoga can enhance athletic performance by increasing flexibility and preventing injuries. Athletes often incorporate poses like Pigeon Pose and Wheel Pose.",
+        "Building resiilience involves problems-solving skills a strong support network self-compassion, and adapting",
     },
     {
       id: 9,
       question:
-        "Can pregnant women practice yoga exercises, and are there specialized prenatal yoga poses?",
+        "What are the benefits of mindfulness and meditation for mental health?",
       answer:
-        "Yes, prenatal yoga is safe and beneficial for pregnant women. Poses like Cat-Cow and Butterfly Pose can provide relief and preparation for childbirth.",
+        "Mindfulness and meditation reduce stress, improve focus, and promote relaxation, benefiting mental well-being.",
     },
     {
       id: 10,
       question:
-        " How can yoga exercises improve mental well-being and emotional health?",
+        "How can I seek professional help for mental health concerns, and is it stigmatized?",
       answer:
-        "Yoga exercises improve mental well-being by reducing stress, anxiety, and depression. Practices like meditation and Lotus Pose  can enhance emotional health.",
+        "Seeking professional help is not stigmatized. Talk to your primary care physician or a mental health specialist for guidance on treatment options.",
     },
   ];
 
