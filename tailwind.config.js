@@ -23,6 +23,7 @@ module.exports = {
         t2: "#F0E6FA", //light blue
         t3: "#FFF8DC", //orange
         t4: "#E6F0FA",
+        t5: "113946",
       },
     },
   },
