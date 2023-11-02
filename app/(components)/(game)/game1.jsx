@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 
 const questions = [
   {
@@ -168,39 +169,41 @@ export default function Game1() {
   };
 
   return (
-    <div className="bg-gray-200 p-4 rounded-lg shadow-md">
+    <motion.div
+      initial={{ opacity: 0, y: -50 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -50 }}
+      className="bg-gray-200 p-4 rounded-lg shadow-md"
+    >
       <div className="flex justify-center">
-        {" "}
         <h2 className="text-2xl font-semibold text-c4 mb-4">Quiz Game</h2>
       </div>
       <div className="flex justify-center mb-2">
-        {" "}
         <p>Question {currentQuestion + 1}:</p>
         <p>{questions[currentQuestion].question}</p>
       </div>
 
       <div className="text-center">
         {questions[currentQuestion].options.map((option, index) => (
-          <div key={index}>
-            <button
-              className={`bg-transparent border-2 border-black
-              rounded-lg p-2 m-2 hover:bg-black text-black
-               font-semibold py-2 px-4 hover:text-white 
-               hover:border-transparent transition-transform 
-               transform hover:-translate-y-2 focus:outline-none
-                focus:shadow-outline ${
-                  selectedAnswer === option ? " bg-c4 text-c1" : " "
-                }`}
-              onClick={() => handleAnswerClick(option)}
-            >
-              {option}
-            </button>
-          </div>
+          <motion.div
+            key={index}
+            whileHover={{ scale: 1.05 }}
+            className={`bg-transparent border-2 border-black
+        rounded-lg p-2 m-2 hover:bg-black text-black
+         font-semibold py-2 px-4 hover:text-white 
+         hover:border-transparent transition-transform 
+         transform hover:-translate-y-2 focus:outline-none
+          focus:shadow-outline ${
+            selectedAnswer === option ? " bg-c4 text-purple-400" : " "
+          }`}
+            onClick={() => handleAnswerClick(option)}
+          >
+            {option}
+          </motion.div>
         ))}
       </div>
       {showError && (
         <div className="flex justify-center">
-          {" "}
           <p className="text-red-500">
             Incorrect answer. Try again or click "Next" to proceed.
           </p>
@@ -214,7 +217,7 @@ export default function Game1() {
           <button
             onClick={nextQuestion}
             className=" hover:bg-t4 text-white font-bold py-2 px-4 hover:text-c4 
-  hover:outline-double rounded-2xl
+hover:outline-double rounded-2xl
 focus:outline-none focus:shadow-outline bg-c5"
           >
             Summit
@@ -225,13 +228,13 @@ focus:outline-none focus:shadow-outline bg-c5"
       <div className="flex justify-center">
         <button
           onClick={nextQuestion}
-          className=" hover:bg-t4 text-white font-bold py-2 px-4 hover:text-c4 
-  hover:outline-double rounded-2xl
-focus:outline-none focus:shadow-outline bg-c5 mt-5"
+          className=" hover-bg-t4 text-white font-bold py-2 px-4 hover:text-c4 
+hover-outline-double rounded-2xl
+focus-outline-none focus-shadow-outline bg-c5 mt-5"
         >
           Next
         </button>
       </div>
-    </div>
+    </motion.div>
   );
 }
