@@ -67,14 +67,12 @@ function LoginForm() {
       );
 
       if (response.ok) {
-        // Set the authentication cookie with the token
         const { token } = await response.json();
         Cookies.set("authToken", token, {
           expires: 7,
           path: "/",
         });
 
-        // Set the user's email in a cookie or local storage
         Cookies.set("userEmail", userData.email, { expires: 7, path: "/" });
         Cookies.set("userPhoneNumber", userData.phoneNumber, {
           expires: 7,
@@ -85,15 +83,10 @@ function LoginForm() {
           path: "/",
         });
 
-        // After a successful login or registration, you should set the user's phone number in Cookies.
-
         setIsLoggedIn(true);
-        // Show a success toast
         toast.success("Login successful");
-        // Handle successful login
         console.log("Login successful");
       } else {
-        // Handle login errors
         toast.error("Check your email and password and try again");
         console.error("Login failed");
       }
@@ -102,16 +95,14 @@ function LoginForm() {
     }
   };
   const handleLogout = () => {
-    // Clear the user's session (remove the cookie)
     Cookies.remove("authToken");
     setIsLoggedIn(false); // Mark the user as logged out
-    // Show a success toast for logout
     toast.success("Logout successful");
     console.log("Logged out");
   };
 
   return (
-    <div className=" font-f3 max-w-md mx-auto mt-4 p-6 bg-white shadow-md rounded">
+    <div className="max-w-md mx-auto mt-4 p-6 bg-white shadow-md rounded">
       <div>
         <ToastContainer
           position="top-right"
@@ -142,7 +133,6 @@ function LoginForm() {
           </div>
         </div>
       ) : (
-        // If the user is not logged in, show the login form
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
             <label
@@ -248,7 +238,6 @@ function LoginForm() {
           <div className="mt-6 flex justify-center">
             <button
               type="submit"
-              // className="bg-blue-500 text-white p-2 rounded w-full"
               className=" hover:bg-t4 text-white font-bold py-2 px-10 hover:text-c4 
               hover:outline-double rounded-2xl
             focus:outline-none focus:shadow-outline bg-c5"
