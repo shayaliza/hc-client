@@ -33,7 +33,7 @@ const Footer = () => {
         </div>
 
         <div className="row2 w-1/5">
-          <h2>Page list</h2>
+          <h2 className="font-f2">Page list</h2>
           <div className="col_of_2row">
             <ul>
               <li>Home</li>
