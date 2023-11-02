@@ -6,7 +6,7 @@ import { BiMenu } from "react-icons/bi";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [route, setRoute] = useState("/home");
+  const [route, setRoute] = useState("/");
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -18,6 +18,7 @@ function Navbar() {
 
   return (
     <nav className="bg-c3 p-4 flex  lg:justify-center items-center font-f2">
+      {/* small screen special */}
       <div className="flex justify items-center lg:hidden ">
         <Link href="/" className="text-c2">
           <Image
@@ -26,9 +27,17 @@ function Navbar() {
             width={70}
             height={70}
             className="-mt-5 -mb-5 "
+            onClick={() => {
+              closeMenu();
+              setRoute("/");
+            }}
           />
         </Link>
-        <button className="block lg:hidden text-c2   " onClick={toggleMenu}>
+        <button
+          className=" lg:hidden text-c2
+         "
+          onClick={toggleMenu}
+        >
           {menuOpen ? (
             ""
           ) : (
@@ -39,20 +48,25 @@ function Navbar() {
         </button>
       </div>
 
+      {/* small screen special */}
+
       <ul
         className={`${
           menuOpen ? "block" : "hidden"
         } lg:flex lg:space-x-4  flex-1`}
       >
         <li>
-          <a
+          <Link
             href="/"
             className={`
-          ${route === "/home" ? " text-c1" : " text-c2"} `}
-            onClick={closeMenu}
+          ${route === "/" ? " text-c1" : " text-c2"} `}
+            onClick={() => {
+              closeMenu();
+              setRoute("/");
+            }}
           >
             Home
-          </a>
+          </Link>
         </li>
         <li>
           <Link
