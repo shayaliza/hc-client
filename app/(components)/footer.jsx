@@ -2,9 +2,13 @@
 import React from "react";
 import "./style2.css";
 import Image from "next/image";
-// import { FaPhone, FaMapMarkerAlt } from "react-icons/fa";
-import { BiLogoFacebookCircle } from "react-icons/bi";
-import { AiFillInstagram, AiFillLinkedin } from "react-icons/ai";
+import {
+  AiFillFacebook,
+  AiFillGithub,
+  AiFillInstagram,
+  AiFillLinkedin,
+  AiFillMessage,
+} from "react-icons/ai";
 
 const Footer = () => {
   return (
@@ -33,57 +37,48 @@ const Footer = () => {
           <div className="col_of_2row">
             <ul>
               <li>Home</li>
-              <li>About</li>
-              <li>Testimonial</li>
-              <li>Blog</li>
-              <li>Contact</li>
+              <li>Health</li>
+              <li>Workout</li>
+              <li>Chronic</li>
             </ul>
           </div>
         </div>
 
         <div className="row3 w-1/5">
-          <h2>More info</h2>
+          <h2>Page List</h2>
           <div className="col_of_3row">
             <ul>
-              <li>Lorem, ipsum.</li>
-              <li>Lorem, ipsum.</li>
-              <li>Lorem, ipsum dolor.</li>
-              <li>Lorem ipsum dolor sit.</li>
+              <li>Calculator</li>
+              <li>Woemn</li>
+              <li>Mental Health</li>
+              <li>Game</li>
             </ul>
           </div>
         </div>
 
         <div className="row4 w-1/5">
-          <h2>Open Hours</h2>
+          <h2>Start Journey</h2>
           <div className="col_of_4row">
             <ul>
-              <li>
-                <i className="fa-regular fa-clock"></i> Monday-Thursday
-              </li>
-              <li>
-                <i className="fa-regular fa-clock"></i> Friday
-              </li>
-              <li>
-                <i className="fa-regular fa-clock"></i> Saturday
-              </li>
-              <li>
-                <i className="fa-regular fa-clock"></i> Sunday
-              </li>
+              <li>login</li>
+              <li>signup</li>
+              <li>Add your hospital</li>
             </ul>
           </div>
         </div>
 
         <div className="row5 w-1/5">
-          <h2>Open Hours</h2>
+          <h2>Social Links</h2>
           <div className="col_of_5row">
             <ul>
               <h2>
                 <span className="flex space-x-6">
                   {" "}
                   <AiFillLinkedin />
-                  <AiFillLinkedin />
-                  <AiFillLinkedin />
-                  <AiFillLinkedin />
+                  <AiFillInstagram />
+                  <AiFillFacebook />
+                  <AiFillGithub />
+                  <AiFillMessage />
                 </span>
               </h2>
             </ul>
