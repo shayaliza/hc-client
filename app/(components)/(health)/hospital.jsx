@@ -3,6 +3,7 @@
 
 import React, { useState, useEffect } from "react";
 import HospitalDoctors from "./HospitalDoctors";
+import { motion } from "framer-motion";
 
 function Hospitals() {
   const [hospitalsData, setHospitalsData] = useState([]);
@@ -15,7 +16,12 @@ function Hospitals() {
   }, []);
 
   return (
-    <div className=" max-w-full mx-auto mt-4 p-6 shadow-md rounded bg-c1">
+    <motion.div
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      className="max-w-full mx-auto mt-4 p-6 shadow-md rounded bg-c1"
+    >
       <div className="flex justify-center font-f2">
         {" "}
         <h1 className="text-2xl font-semibold mb-4 text-c4">
@@ -24,7 +30,13 @@ function Hospitals() {
       </div>
       <div className="space-y-4 ">
         {hospitalsData.map((superuser, index) => (
-          <div key={index} className="border p-4 rounded bg-t3 shadow-sm">
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            className="border p-4 rounded bg-t3 shadow-sm"
+          >
             <div className="flex justify-center">
               {" "}
               <h2 className="text-lg text-c5 font-semibold">
@@ -35,13 +47,11 @@ function Hospitals() {
               {" "}
               <p className="text-c3">Address: {superuser.address}</p>
             </div>
-            {/* <div className="flex justify-center"> */}{" "}
             <HospitalDoctors hospitalName={superuser.hospitalName} />
-            {/* </div> */}
-          </div>
+          </motion.div>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 }
 
