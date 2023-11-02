@@ -109,7 +109,7 @@ function SignupForm() {
   };
 
   return (
-    <div className="max-w-md mx-auto mt-4 p-6 bg-white shadow-md rounded">
+    <div className="max-w-md mx-auto mt-4 p-6 bg-white shadow-md rounded font-f2">
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
           <label

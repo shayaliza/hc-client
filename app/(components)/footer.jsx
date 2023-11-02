@@ -13,7 +13,7 @@ import {
 const Footer = () => {
   return (
     <footer>
-      <div className="footer_container">
+      <div className="footer_container font-f2">
         <div className="row1 mt-15">
           {/* <h2>Vital flow</h2> */}
           <div className="col_of_1row w-1/5">
@@ -45,7 +45,7 @@ const Footer = () => {
         </div>
 
         <div className="row3 w-1/5">
-          <h2>Page List</h2>
+          <h2 className="font-f2">Page List</h2>
           <div className="col_of_3row">
             <ul>
               <li>Calculator</li>
@@ -57,7 +57,7 @@ const Footer = () => {
         </div>
 
         <div className="row4 w-1/5">
-          <h2>Start Journey</h2>
+          <h2 className="font-f2">Start Journey</h2>
           <div className="col_of_4row">
             <ul>
               <li>login</li>
@@ -68,7 +68,7 @@ const Footer = () => {
         </div>
 
         <div className="row5 w-1/5">
-          <h2>Social Links</h2>
+          <h2 className="font-f2">Social Links</h2>
           <div className="col_of_5row">
             <ul>
               <h2>
@@ -86,7 +86,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="copyright text-center ml-2 mb-6 pt-5 pb-5">
-        <p className="text-gray-500 text-sm">
+        <p className="text-gray-500  text-lg">
           {new Date().getFullYear()} Vital flow by HackWeb All rights reserved.
         </p>
       </div>

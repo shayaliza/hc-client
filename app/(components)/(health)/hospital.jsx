@@ -16,7 +16,7 @@ function Hospitals() {
 
   return (
     <div className=" max-w-full mx-auto mt-4 p-6 shadow-md rounded bg-c1">
-      <div className="flex justify-center">
+      <div className="flex justify-center font-f2">
         {" "}
         <h1 className="text-2xl font-semibold mb-4 text-c4">
           List of Hospitals

@@ -17,7 +17,7 @@ function Navbar() {
   };
 
   return (
-    <nav className="bg-c3 p-4 flex  lg:justify-center items-center">
+    <nav className="bg-c3 p-4 flex  lg:justify-center items-center font-f2">
       <div className="flex justify items-center lg:hidden ">
         <Link href="/" className="text-c2">
           <Image
@@ -48,7 +48,7 @@ function Navbar() {
           <a
             href="/"
             className={`
-          ${route === "/home" ? " text-c1" : " text-c2"}`}
+          ${route === "/home" ? " text-c1" : " text-c2"} `}
             onClick={closeMenu}
           >
             Home
@@ -180,10 +180,8 @@ function Navbar() {
             Signup
           </Link>
         </li>
-        {/* <li className="ml-auto">Vital Flow</li> */}
       </ul>
-      {/* make this two span only see when the above logo is note there */}
-      {/* <span className="ml-auto "> */}
+
       <span className={`max-lg:hidden ${menuOpen ? "hidden" : "ml-auto"}`}>
         <Image
           src="/logo.png"
@@ -193,9 +191,13 @@ function Navbar() {
           className="-mt-5 -mb-5"
         />
       </span>
-      <span className={`max-lg:hidden  ${menuOpen ? "hidden" : "ml-auto"}`}>
+      <h2
+        className={`max-lg:hidden  ${
+          menuOpen ? "hidden" : "ml-auto"
+        } font-f1 -mt-7 -mb-5 `}
+      >
         vital flow
-      </span>
+      </h2>
     </nav>
   );
 }

@@ -111,7 +111,7 @@ function LoginForm() {
   };
 
   return (
-    <div className="max-w-md mx-auto mt-4 p-6 bg-white shadow-md rounded">
+    <div className=" font-f3 max-w-md mx-auto mt-4 p-6 bg-white shadow-md rounded">
       <div>
         <ToastContainer
           position="top-right"

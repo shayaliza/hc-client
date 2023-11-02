@@ -25,6 +25,11 @@ module.exports = {
         t4: "#E6F0FA",
         t5: "#113946",
       },
+      fontFamily: {
+        f1: ["var(--f1)"], //logo
+        f2: ["var(--f2)"], //text
+        f3: ["var(--f3)"], //button
+      },
     },
   },
   plugins: [],
