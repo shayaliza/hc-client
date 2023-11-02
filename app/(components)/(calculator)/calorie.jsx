@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 
 function Calorie() {
   const [weight, setWeight] = useState(0);
@@ -62,7 +63,12 @@ function Calorie() {
   };
 
   return (
-    <div className="w-full max-w-xs mx-auto mt-5">
+    <motion.div
+      initial={{ opacity: 0, y: -50 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -50 }}
+      className="w-full max-w-xs mx-auto mt-5"
+    >
       <div className="mb-4">
         <label
           className="block text-gray-700 text-sm font-bold mb-2"
@@ -70,7 +76,11 @@ function Calorie() {
         >
           Weight (kg):
         </label>
-        <input
+        <motion.input
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ delay: 0.5 }}
           className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
           id="weight"
           type="number"
@@ -86,7 +96,11 @@ function Calorie() {
         >
           Height (cm):
         </label>
-        <input
+        <motion.input
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ delay: 0.5 }}
           className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
           id="height"
           type="number"
@@ -102,7 +116,11 @@ function Calorie() {
         >
           Age:
         </label>
-        <input
+        <motion.input
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ delay: 0.5 }}
           className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
           id="age"
           type="number"
@@ -142,7 +160,11 @@ function Calorie() {
         <label className="block text-gray-700 text-sm font-bold mb-2">
           Activity Level:
         </label>
-        <select
+        <motion.select
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ delay: 0.5 }}
           className="block w-full bg-white border border-gray-300 text-gray-700 rounded py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
           value={activityLevel}
           onChange={(e) => setActivityLevel(e.target.value)}
@@ -160,27 +182,39 @@ function Calorie() {
           <option value="superActive">
             Super Active (Very hard exercise, physical job, or training)
           </option>
-        </select>
+        </motion.select>
       </div>
       <div className="flex justify-center">
-        <button
+        <motion.button
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
           onClick={calculateCalories}
-          className=" hover:bg-t4 text-white font-bold py-2 px-4 hover:text-c4 
-          hover:outline-double rounded-2xl
-        focus:outline-none focus:shadow-outline bg-c5"
+          className="hover:bg-t4 text-white font-bold py-2 px-4 hover:text-c4 hover:outline-double rounded-2xl focus:outline-none focus:shadow-outline bg-c5"
         >
           Calculate
-        </button>
+        </motion.button>
       </div>
-      <div className="mt-4">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ delay: 0.5 }}
+        className="mt-4"
+      >
         <strong>Your Daily Caloric Needs: {calories} calories</strong>
-      </div>
+      </motion.div>
       {message && (
-        <div className="mt-4">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ delay: 0.5 }}
+          className="mt-4"
+        >
           <strong>{message}</strong>
-        </div>
+        </motion.div>
       )}
-    </div>
+    </motion.div>
   );
 }
 

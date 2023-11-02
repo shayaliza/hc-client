@@ -1,11 +1,10 @@
 "use client";
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 
 function Fertility() {
-  // Create state to keep track of which questions are open
   const [openQuestions, setOpenQuestions] = useState([]);
 
-  // Define the questions and their respective answers
   const questions = [
     {
       id: 1,
@@ -80,19 +79,26 @@ function Fertility() {
 
   return (
     <>
-      <div className="p-4 bg-gray-100 mx-5 ml-5 rounded-lg shadow-md">
+      <motion.div
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -50 }}
+        className="p-4 bg-gray-100 mx-5 ml-5 rounded-lg shadow-md"
+      >
         <div className="flex justify-center">
           <h2 className="text-2xl font-semibold text-c4 mb-4">
             Fertility Blog
           </h2>
         </div>
-
         {questions.map((q) => (
-          <div key={q.id} className="mb-4">
-            <div
-              className="cursor-pointer flex justify-between items-center 
-            p-4 border border-gray-300 rounded shadow-md transition-transform
-             hover:scale-95 bg-t3 text-c5"
+          <motion.div
+            key={q.id}
+            initial={{ scale: 1 }}
+            whileHover={{ scale: 1.05 }}
+            className="mb-4"
+          >
+            <motion.div
+              className={`cursor-pointer flex justify-between items-center p-4 border border-gray-300 rounded shadow-md transition-transform hover:scale-95 bg-t3 text-c5`}
               onClick={() => toggleQuestion(q.id)}
             >
               <div className="font-semibold">{q.question}</div>
@@ -101,15 +107,21 @@ function Fertility() {
               ) : (
                 <span className="text-blue-500">+</span>
               )}
-            </div>
-            {openQuestions.includes(q.id) && (
-              <div className="bg-t2 text-c4 p-4 border-t border-gray-300">
-                {q.answer}
-              </div>
-            )}
-          </div>
+            </motion.div>
+            <motion.div
+              initial={{ height: 0, opacity: 0 }}
+              animate={{
+                height: openQuestions.includes(q.id) ? "auto" : 0,
+                opacity: openQuestions.includes(q.id) ? 1 : 0,
+              }}
+              transition={{ duration: 0.3 }}
+              className="bg-t2 text-c4 p-4 border-t border-gray-300 overflow-hidden"
+            >
+              {q.answer}
+            </motion.div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </>
   );
 }

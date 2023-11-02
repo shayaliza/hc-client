@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 
 function PeriodCalc() {
   const [flowRate, setFlowRate] = useState("");
@@ -25,7 +26,12 @@ function PeriodCalc() {
   };
 
   return (
-    <div className="mx-5 ml-5 p-4 bg-gray-100 rounded-lg shadow-lg">
+    <motion.div
+      initial={{ opacity: 0, y: -50 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -50 }}
+      className="mx-5 ml-5 p-4 bg-gray-100 rounded-lg shadow-lg"
+    >
       <div className="flex justify-center">
         <h2 className="text-2xl font-bold mb-4 text-c4">
           Period Date Calculator
@@ -33,7 +39,6 @@ function PeriodCalc() {
       </div>
       <div className="mb-4">
         <div className="flex justify-center">
-          {" "}
           <label
             className="block text-gray-700 text-sm font-bold mb-2"
             htmlFor="flowRate"
@@ -42,8 +47,11 @@ function PeriodCalc() {
           </label>
         </div>
         <div className="flex justify-center">
-          {" "}
-          <input
+          <motion.input
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ delay: 0.5 }}
             className="w-full py-2 px-3 rounded border max-w-md"
             type="number"
             id="flowRate"
@@ -56,15 +64,17 @@ function PeriodCalc() {
         <div className="flex justify-center">
           <label
             className="block text-gray-700 text-sm font-bold mb-2"
-            htmlFor="flowRate"
+            htmlFor="lastDate"
           >
             Last Period Date
           </label>
         </div>
-
         <div className="flex justify-center">
-          {" "}
-          <input
+          <motion.input
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ delay: 0.5 }}
             className="w-full py-2 px-3 rounded border max-w-md"
             type="date"
             id="lastDate"
@@ -83,8 +93,11 @@ function PeriodCalc() {
           </label>
         </div>
         <div className="flex justify-center">
-          {" "}
-          <input
+          <motion.input
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ delay: 0.5 }}
             className="w-full py-2 px-3 rounded border max-w-md"
             type="number"
             id="avgCycle"
@@ -94,20 +107,19 @@ function PeriodCalc() {
         </div>
       </div>
       <div className="flex justify-center">
-        {" "}
-        <button
-          className=" hover:bg-t4 text-white font-bold py-2 px-4 hover:text-c4 
-        hover:outline-double rounded-2xl
-      focus:outline-none focus:shadow-outline bg-c5"
+        <motion.button
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          className="hover:bg-t4 text-white font-bold py-2 px-4 hover:text-c4 hover:outline-double rounded-2xl focus:outline-none focus:shadow-outline bg-c5"
           onClick={calculatePeriodDate}
         >
           Calculate
-        </button>
+        </motion.button>
       </div>
       <div className="mt-4 text-c4 flex justify-evenly">
         <strong>Expected Period Date:</strong> {expectedDate}
       </div>
-    </div>
+    </motion.div>
   );
 }
 

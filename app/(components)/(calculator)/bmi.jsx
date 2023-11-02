@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 
 function Bmi() {
   const [weight, setWeight] = useState(0);
@@ -43,7 +44,12 @@ function Bmi() {
   };
 
   return (
-    <div className="w-full max-w-xs mx-auto mt-5">
+    <motion.div
+      initial={{ opacity: 0, y: -50 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -50 }}
+      className="w-full max-w-xs mx-auto mt-5"
+    >
       <div className="mb-4">
         <label
           className="block text-gray-700 text-sm font-bold mb-2"
@@ -51,7 +57,11 @@ function Bmi() {
         >
           Weight (kg):
         </label>
-        <input
+        <motion.input
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ delay: 0.5 }}
           className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
           id="weight"
           type="number"
@@ -67,7 +77,11 @@ function Bmi() {
         >
           Height (cm):
         </label>
-        <input
+        <motion.input
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ delay: 0.5 }}
           className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
           id="height"
           type="number"
@@ -78,26 +92,38 @@ function Bmi() {
       </div>
 
       <div className="flex justify-center">
-        <button
+        <motion.button
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
           onClick={calculateBMI}
-          className=" hover:bg-t4 text-white font-bold py-2 px-4 hover:text-c4 
-          hover:outline-double rounded-2xl
-        focus:outline-none focus:shadow-outline bg-c5"
+          className="hover:bg-t4 text-white font-bold py-2 px-4 hover:text-c4 hover:outline-double rounded-2xl focus:outline-none focus:shadow-outline bg-c5"
         >
           Calculate
-        </button>
+        </motion.button>
       </div>
 
-      <div className="mt-4">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ delay: 0.5 }}
+        className="mt-4"
+      >
         <strong>Your BMI: {bmi}</strong>
-      </div>
+      </motion.div>
       {message && (
-        <div className="mt-4">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ delay: 0.5 }}
+          className="mt-4"
+        >
           <strong>You are {message}</strong>
           <p>{getAdvice(parseFloat(bmi))}</p>
-        </div>
+        </motion.div>
       )}
-    </div>
+    </motion.div>
   );
 }
 

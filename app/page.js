@@ -83,12 +83,6 @@ export default function Home() {
         >
           &#8250;
         </button>
-        {/* <button
-     className="absolute top-60 right-10 text-6xl transform -translate-y-1/2 text-gray-600 hover:text-gray-900"
-     onClick={nextItem}
-   >
-     &#8250;
-   </button> */}
       </div>
       <Footer />
     </>
