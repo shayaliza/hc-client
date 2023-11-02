@@ -38,9 +38,9 @@ footer {
 ul {
   list-style: none;
 }
-.row1 {
-  width: min-content; /*edit*/
-}
+/* .row1 {
+  width: min-content; 
+} */
 
 .col_of_1row {
   width: auto;
@@ -111,7 +111,7 @@ h2 {
   color: #faf0e6;
   box-sizing: border-box;
   margin-top: 16px;
-  margin-left: 10px;
+  margin-left: 55px;
 }
 /* .row1{
     align-items: ;

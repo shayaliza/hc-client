@@ -55,7 +55,11 @@ export default function Home() {
               index === activeIndex ? "translate-x-0" : "translate-x-full"
             }`}
           >
-            <div className="bg-c2 h-64 m-4 p-4 rounded-lg shadow-md">
+            <div
+              className="bg-t5
+            
+          h-64 m-4 p-4 rounded-lg shadow-md"
+            >
               <Image
                 src={item.imageUrl}
                 width={1000}

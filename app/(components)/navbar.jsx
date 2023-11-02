@@ -1,7 +1,8 @@
 "use client";
 import Link from "next/link";
-// import Image from "next/image";
+import Image from "next/image";
 import { useState } from "react";
+import { BiMenu } from "react-icons/bi";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -16,21 +17,32 @@ function Navbar() {
   };
 
   return (
-    <nav className="bg-c3 p-4 flex justify-center items-center">
-      <div className="flex justify items-center md:hidden">
+    <nav className="bg-c3 p-4 flex  lg:justify-center items-center">
+      <div className="flex justify items-center lg:hidden ">
         <Link href="/" className="text-c2">
-          Your Logo
+          <Image
+            src="/logo.png"
+            alt="not loaded"
+            width={70}
+            height={70}
+            className="-mt-5 -mb-5 "
+          />
         </Link>
-        <button className="block md:hidden text-c2" onClick={toggleMenu}>
-          {menuOpen ? "Close" : "Menu"}
+        <button className="block lg:hidden text-c2   " onClick={toggleMenu}>
+          {menuOpen ? (
+            ""
+          ) : (
+            <h2 className="-mt-7 -mb-5 ">
+              <BiMenu />
+            </h2>
+          )}
         </button>
       </div>
 
-      {/* Responsive menu */}
       <ul
         className={`${
           menuOpen ? "block" : "hidden"
-        } md:flex md:space-x-4  flex-1`}
+        } lg:flex lg:space-x-4  flex-1`}
       >
         <li>
           <a
@@ -170,7 +182,20 @@ function Navbar() {
         </li>
         {/* <li className="ml-auto">Vital Flow</li> */}
       </ul>
-      <span className="ml-auto ">Vital Flow</span>
+      {/* make this two span only see when the above logo is note there */}
+      {/* <span className="ml-auto "> */}
+      <span className={`max-lg:hidden ${menuOpen ? "hidden" : "ml-auto"}`}>
+        <Image
+          src="/logo.png"
+          alt="not loaded"
+          width={70}
+          height={70}
+          className="-mt-5 -mb-5"
+        />
+      </span>
+      <span className={`max-lg:hidden  ${menuOpen ? "hidden" : "ml-auto"}`}>
+        vital flow
+      </span>
     </nav>
   );
 }
