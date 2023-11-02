@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 
 function Blog() {
   const [openQuestions, setOpenQuestions] = useState([]);
@@ -83,17 +84,26 @@ function Blog() {
 
   return (
     <>
-      <div className="p-4 bg-c1 mx-5 ml-5 rounded-lg shadow-md">
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -20 }}
+        className="p-4 bg-c1 mx-5 ml-5 rounded-lg shadow-md"
+      >
         <div className="flex justify-center">
           <h2 className="text-2xl font-semibold text-c4 mb-4">Workout Blog</h2>
         </div>
 
         {questions.map((q) => (
-          <div key={q.id} className="mb-4">
-            <div
-              className="cursor-pointer flex justify-between items-center 
-              p-4 border border-gray-300 rounded shadow-md transition-transform
-               hover:scale-95 bg-t3 text-c5"
+          <motion.div
+            key={q.id}
+            initial={{ scale: 0.9 }}
+            animate={{ scale: 1 }}
+            whileHover={{ scale: 1.02 }}
+            className="mb-4"
+          >
+            <motion.div
+              className="cursor-pointer flex justify-between items-center p-4 border border-gray-300 rounded shadow-md transition-transform hover:scale-95 bg-t3 text-c5"
               onClick={() => toggleQuestion(q.id)}
             >
               <div className="font-semibold">{q.question}</div>
@@ -102,15 +112,19 @@ function Blog() {
               ) : (
                 <span className="text-blue-500">+</span>
               )}
-            </div>
+            </motion.div>
             {openQuestions.includes(q.id) && (
-              <div className="bg-t2 text-c4 p-4 border-t border-gray-300">
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                className="bg-t2 text-c4 p-4 border-t border-gray-300"
+              >
                 {q.answer}
-              </div>
+              </motion.div>
             )}
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </>
   );
 }

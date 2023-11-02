@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 
 function HomeWorkout() {
   const [selectedWorkout, setSelectedWorkout] = useState("fullbody");
@@ -195,7 +196,12 @@ function HomeWorkout() {
   };
 
   return (
-    <div className="mx-5 ml-5 p-4  bg-c1 shadow-md rounded">
+    <motion.div
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      className="mx-5 ml-5 p-4  bg-c1 shadow-md rounded"
+    >
       <h1 className="text-2xl font-semibold mb-4 text-c4 flex justify-center">
         Home Workout
       </h1>
@@ -372,7 +378,7 @@ function HomeWorkout() {
           ))}
         </ul>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

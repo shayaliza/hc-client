@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 
 function Diet() {
   const [isVeg, setIsVeg] = useState(true);
@@ -46,12 +47,17 @@ function Diet() {
   };
 
   return (
-    <div className=" p-4 mx-5 ml-5 bg-c1 shadow-md rounded">
+    <motion.div
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      className="p-4 mx-5 ml-5 bg-c1 shadow-md rounded"
+    >
       <div className="flex justify-center">
         <h1 className="text-2xl mb-4 text-c4 font-semibold">Diet Chart</h1>
       </div>
-      <div className="mb-4 ">
-        <label className=" text-gray-700 text-sm font-bold mb-2 justify-center flex">
+      <div className="mb-4">
+        <label className="text-gray-700 text-sm font-bold mb-2 justify-center flex">
           Select your dietary preference
         </label>
 
@@ -72,18 +78,15 @@ function Diet() {
       <div className="flex justify-center">
         <button
           onClick={generateDiet}
-          className=" hover:bg-t4 text-white font-bold py-2 px-4 hover:text-c4 
-          hover:outline-double rounded-2xl
-        focus:outline-none focus:shadow-outline bg-c5"
+          className="hover:bg-t4 text-white font-bold py-2 px-4 hover:text-c4 hover:outline-double rounded-2xl focus:outline-none focus:shadow-outline bg-c5"
         >
           Generate Diet Plan
         </button>
       </div>
       <div className="mt-4 flex justify-center">
-        {/* <h2 className="text-lg font-semibold mb-2 text-c4">Your Diet Plan:</h2> */}
-        <table className="w-full bg-t3 mr-14 ml-14 ">
+        <table className="w-full bg-t3 mr-14 ml-14">
           <thead>
-            <tr className="text-c3 ">
+            <tr className="text-c3">
               <th className="text-left pl-10">Food Item</th>
               <th className="text-left">Calories</th>
               <th className="text-left">Protein (g)</th>
@@ -91,7 +94,7 @@ function Diet() {
           </thead>
           <tbody>
             {selectedItems.map((item, index) => (
-              <tr key={index} className="">
+              <tr key={index}>
                 <td className="pl-10">{item.name}</td>
                 <td>{item.calories}</td>
                 <td>{item.protein}</td>
@@ -100,7 +103,7 @@ function Diet() {
           </tbody>
         </table>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
