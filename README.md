@@ -81,14 +81,13 @@ node start
 .\hc-client\*
   ├─ app -
   │     ├─ (components)
-  │     │              ├─ (calculator)
-  │     │              ├─ (calculator)
-  │     │              ├─ (chronic)
-  │     │              ├─ (game)
-  │     │              ├─ (health)
-  │     │              ├─ (mental)
-  │     │              ├─ (woman)
-  │     │              ├─ (workout)
+  │     │              ├─ (calculator)/bmi.jsx , bodyfat.jsx, calorie.jsx
+  │     │              ├─ (chronic)/bp.jsx
+  │     │              ├─ (game)/gam1.jsx, game2.jsx
+  │     │              ├─ (health)/addDocter.jsx, hospital.jsx, HospitalDoctors.jsx, showDocter.jsx
+  │     │              ├─ (mental)/mental1.jsx, mental2.jsx, mental3.jsx
+  │     │              ├─ (woman)/fertility.jsx, mensuration.jsx, periodcalc.jsx, sex.jsx
+  │     │              ├─ (workout)/blog.jsx, diet.jsx, homeWorkout.jsx, yoga.jsx
   │     │              ├─ footer.jsx
   │     │              ├─ navbar.jsx
   │     │              └─ style2.css
@@ -140,6 +139,7 @@ node start
 - Game 2 and 3
 - Mental Health Support
 - Search bar for Fetching Hospitals and Doctors
+- loading.js in every page
  ### **Bugs Fixing**
 - Changing Email to Username in Bp tracker
 ### **If you find any bugs feel free to tell** 
