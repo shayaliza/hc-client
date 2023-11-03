@@ -5,7 +5,6 @@ import { useState } from "react";
 import { BiMenu } from "react-icons/bi";
 
 function Navbar() {
-<<<<<<< HEAD
   const [menuOpen, setMenuOpen] = useState(false);
   const [route, setRoute] = useState("/");
 
@@ -56,13 +55,6 @@ function Navbar() {
           menuOpen ? "block" : "hidden"
         } lg:flex lg:space-x-4  flex-1`}
       >
-=======
-  // added a comment by vampire
-  return (
-    //here new comment
-    <nav className="bg-blue-500 p-4">
-      <ul className="flex space-x-4">
->>>>>>> fae0f4fd62a1611015eca1409765927787fa70e5
         <li>
           <Link
             href="/"
