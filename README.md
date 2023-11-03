@@ -78,20 +78,52 @@ node start
 
 ## App structure
 ```graphql
-# Code & components for pages
-./src/* 
-  ├─ src/assets - # Minified images, fonts, icon files
-  ├─ src/components - # Individual smaller components
-  ├─ src/fragments - # Larger chunks of a page composed of multiple components
-  ├─ src/layouts - # Page layouts used for different types of pages composed of components and fragments
-  ├─ src/page - # Custom pages or pages composed of layouts with hardcoded data components, fragments, & layouts
-  ├─ src/pages/* - # Next.js file based routing
-  │  ├─ _app.js - # next.js app entry point
-  │  ├─ _document.js - # next.js document wrapper
-  │  ├─ global.css - #  Global CSS styles
-  │  └─ Everything else... - # File based routing
-  └─ src/utils - # Utility functions used in various places
-
+.\hc-client\*
+  ├─ app -
+  │     ├─ (components)
+  │     │              ├─ (calculator)
+  │     │              ├─ (calculator)
+  │     │              ├─ (chronic)
+  │     │              ├─ (game)
+  │     │              ├─ (health)
+  │     │              ├─ (mental)
+  │     │              ├─ (woman)
+  │     │              ├─ (workout)
+  │     │              ├─ footer.jsx
+  │     │              ├─ navbar.jsx
+  │     │              └─ style2.css
+  │     ├─ (pages)
+  │     │         ├─ (calculator)/page.jsx
+  │     │         ├─ (chronic)/page.jsx
+  │     │         ├─ (game)/page.jsx
+  │     │         ├─ (health)/page.jsx
+  │     │         ├─ (login)/page.jsx
+  │     │         ├─ (mentalHealth)/page.jsx
+  │     │         ├─ (signup)/page.jsx
+  │     │         ├─ (womaniya)/page.jsx
+  │     │         └─ (workout)/page.jsx
+  │     ├─ .env
+  │     ├─ favicon.ico
+  │     ├─ globals.css
+  │     ├─ layout.js
+  │     ├─ page.js
+  │     └─ others # node modules, package.json, package-lock.json, .gitignore
+  ├─ public- #all assets
+  ├─ server -
+  │     ├─ server.js
+  │     ├─ modals
+  │     │        ├─ bp.js
+  │     │        ├─ doctor.js.js
+  │     │        ├─ superuser.js
+  │     │        └─ user.js
+  │     ├─ routes
+  │     │        ├─ authRoutes.js
+  │     │        └─ getRoutes.js
+  │     ├─ utils
+  │     │        └─ auth.js
+  │     ├─ .env
+  │     └─ others - # node modules, package.json, package-lock.json, .gitignore
+  └─ others - # .next, node_modules, .eslint.json, jsconfig.json, next-end.ts, next.config.js, package.json, package-lock.json, .gitignore, postcss.congfig.js, ReadME.md, tailwind.config.js, tsconfig.json
 ```
 
 ## Project status
