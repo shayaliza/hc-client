@@ -209,7 +209,7 @@ function HomeWorkout() {
         <label className=" text-c5 text-sm font-bold mb-2 flex justify-center">
           Select Workout Type
         </label>
-        <div className="flex justify-center space-x-3">
+        <div className="md:flex md:justify-center space-x-3">
           <button
             onClick={() => handleWorkoutSelection("fullbody")}
             className={`
@@ -307,7 +307,7 @@ function HomeWorkout() {
         <label className=" text-c5 text-sm font-bold mb-2 flex justify-center">
           Select Workout Level
         </label>
-        <div className="flex justify-center space-x-3">
+        <div className="md:flex md:justify-center space-x-3">
           <button
             onClick={() => handleLevelSelection("beginner")}
             className={`${

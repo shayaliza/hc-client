@@ -13,7 +13,7 @@ function Mental2() {
         <h1 className="text-2xl font-semibold text-center mb-6 text-c4">
           Choose Your Therapy Plan
         </h1>
-        <div className="flex justify-center space-x-4">
+        <div className="sm:flex sm:justify-center space-x-4 text-center">
           {/* Basic Plan */}
           <motion.div
             whileHover={{ scale: 1.05 }}

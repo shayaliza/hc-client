@@ -2,14 +2,16 @@
 import React, { useState, useEffect } from "react";
 import Cookies from "js-cookie";
 import axios from "axios";
+import format from "date-fns/format";
+import { parseISO } from "date-fns";
 import { motion } from "framer-motion";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function Bp() {
   useEffect(() => {
     const userEmail = Cookies.get("userEmail");
     setUserEmail(userEmail);
-
-    // Load and display previous BP records
     getPreviousBpRecords();
   }, []);
   const [userEmail, setUserEmail] = useState("");
@@ -29,6 +31,7 @@ function Bp() {
       await axios.post("http://localhost:5000/api/bpRecords", newRecord);
       setSysBP("");
       setDiaBP("");
+      toast.success("Bp saved succesfully successful");
     } catch (error) {
       console.error("Error saving BP record:", error);
     }
@@ -51,6 +54,11 @@ function Bp() {
     } catch (error) {
       console.error("Error getting BP records:", error);
     }
+  };
+  const formatDate = (dateString) => {
+    const date = parseISO(dateString);
+    const formattedDate = format(date, "EEEE, MMM d, yyyy h:mm a");
+    return formattedDate;
   };
   return (
     <motion.div
@@ -122,11 +130,21 @@ function Bp() {
               className="flex justify-evenly"
             >
               Systolic BP: {record.sysBP}, Diastolic BP: {record.diaBP}, Date:{" "}
-              {record.date}
+              {formatDate(record.date)}
             </motion.li>
           ))}
         </ul>
       </div>
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
     </motion.div>
   );
 }

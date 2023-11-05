@@ -22,7 +22,7 @@ function Navbar() {
       <div className="flex justify items-center lg:hidden ">
         <Link href="/" className="text-c2">
           <Image
-            src="/logo.png"
+            src="/logoc.png"
             alt="not loaded"
             width={70}
             height={70}
@@ -198,7 +198,7 @@ function Navbar() {
 
       <span className={`max-lg:hidden ${menuOpen ? "hidden" : "ml-auto"}`}>
         <Image
-          src="/logo.png"
+          src="/logoc.png"
           alt="not loaded"
           width={70}
           height={70}

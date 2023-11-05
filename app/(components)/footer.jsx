@@ -24,7 +24,7 @@ const Footer = () => {
                   alt="not loaded"
                   width={300}
                   height={300}
-                  className=" -mt-16 -mb-3"
+                  className="  -mb-3"
                 />
               </li>
             </ul>

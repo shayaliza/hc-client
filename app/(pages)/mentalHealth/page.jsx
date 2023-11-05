@@ -10,7 +10,7 @@ function page() {
 
   return (
     <div className="max-w-full mx-5 mr-5 mt-5 font-f3">
-      <div className="mb-4 flex justify-center space-x-5">
+      <div className="mb-4 md:flex md:justify-center space-x-5">
         <button
           className={`mr-2 bg-t2 border border-solid border-t3
              rounded-lg  hover:bg-c2 hover:text-t3
