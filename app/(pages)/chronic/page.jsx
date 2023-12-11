@@ -1,10 +1,8 @@
 "use client";
-import React from "react";
 import { useState } from "react";
 import Bp from "../../(components)/(chronic)/bp";
 
-export default page;
-function page() {
+function Page() {
   const [calculatorType, setCalculatorType] = useState("bmi");
 
   return (
@@ -45,8 +43,7 @@ function page() {
         </button>
       </div>
       {calculatorType === "bmi" && <Bp />}
-      {/* {calculatorType === "calorie" && <Calorie />} */}
-      {/* {calculatorType === "bodyfat" && <BodyFat />} */}
     </div>
   );
 }
+export default Page;

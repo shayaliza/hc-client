@@ -5,7 +5,7 @@ import Mental1 from "../../(components)/(mental)/mental1";
 import Mental2 from "../../(components)/(mental)/mental2";
 import Mental3 from "../../(components)/(mental)/mental3";
 
-function page() {
+function Page() {
   const [gameType, setGameType] = useState("mental2");
 
   return (
@@ -53,4 +53,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;

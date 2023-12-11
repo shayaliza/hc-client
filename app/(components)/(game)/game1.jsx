@@ -205,7 +205,7 @@ export default function Game1() {
       {showError && (
         <div className="flex justify-center">
           <p className="text-red-500">
-            Incorrect answer. Try again or click "Next" to proceed.
+            Incorrect answer. Try again or click Next to proceed.
           </p>
         </div>
       )}

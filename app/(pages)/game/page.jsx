@@ -3,8 +3,9 @@ import React from "react";
 import { useState } from "react";
 import Game1 from "../../(components)/(game)/game1";
 import Game2 from "../../(components)/(game)/game2";
+import Bodyfat from "../../(components)/(calculator)/bodyfat";
 
-function page() {
+function Page() {
   const [gameType, setGameType] = useState("game1");
 
   return (
@@ -46,9 +47,9 @@ function page() {
       </div>
       {gameType === "game1" && <Game1 />}
       {gameType === "game2" && <Game2 />}
-      {gameType === "bodyfat" && <BodyFat />}
+      {gameType === "bodyfat" && <Bodyfat />}
     </div>
   );
 }
 
-export default page;
+export default Page;

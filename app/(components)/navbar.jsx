@@ -33,11 +33,7 @@ function Navbar() {
             }}
           />
         </Link>
-        <button
-          className=" lg:hidden text-c2
-         "
-          onClick={toggleMenu}
-        >
+        <button className=" lg:hidden text-c2" onClick={toggleMenu}>
           {menuOpen ? (
             ""
           ) : (

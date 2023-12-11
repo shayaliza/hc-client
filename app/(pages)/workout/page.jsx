@@ -6,7 +6,7 @@ import HomeWorkout from "../../(components)/(workout)/homeWorkout";
 import Yoga from "../../(components)/(workout)/yoga";
 import Blog from "../../(components)/(workout)/blog";
 
-function page() {
+function Page() {
   const [selectedTopic, setSelectedTopic] = useState("diet");
 
   return (
@@ -67,4 +67,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;
