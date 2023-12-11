@@ -28,7 +28,7 @@ function HospitalOwnerPage() {
     const checkSuperUser = async () => {
       try {
         const response = await fetch(
-          "http://localhost:5000/api/check-superuser",
+          "https://healthcarebackend-6vr474q1v-shayalizas-projects.vercel.app//api/check-superuser",
           {
             method: "POST",
             headers: {
@@ -114,127 +114,6 @@ function HospitalOwnerPage() {
   }
 
   return (
-    // <div className="max-w-2xl mx-auto mt-4 p-6 bg-c1 shadow-md rounded">
-    //   <h1 className="text-2xl font-semibold mb-4 text-c4">
-    //     Upload Doctor Information
-    //   </h1>
-    //   <form onSubmit={handleDoctorSubmit}>
-    //     <div className="mb-4">
-    //       <label htmlFor="name" className="block text-c5 text-sm font-semibold">
-    //         Doctor Name
-    //       </label>
-    //       <input
-    //         type="text"
-    //         id="name"
-    //         name="name"
-    //         value={doctorData.name}
-    //         onChange={(e) =>
-    //           setDoctorData({ ...doctorData, name: e.target.value })
-    //         }
-    //         className="w-full p-2 border border-gray-300 rounded mt-2"
-    //         required
-    //       />
-    //     </div>
-    //     <div className="mb-4">
-    //       <label
-    //         htmlFor="speciality"
-    //         className="block text-c5 text-sm font-semibold"
-    //       >
-    //         Speciality
-    //       </label>
-    //       <input
-    //         type="text"
-    //         id="speciality"
-    //         name="speciality"
-    //         value={doctorData.speciality}
-    //         onChange={(e) =>
-    //           setDoctorData({ ...doctorData, speciality: e.target.value })
-    //         }
-    //         className="w-full p-2 border border-gray-300 rounded mt-2"
-    //         required
-    //       />
-    //     </div>
-    //     <div className="mb-4">
-    //       <label htmlFor="time" className="block text-c5 text-sm font-semibold">
-    //         Time
-    //       </label>
-    //       <input
-    //         type="text"
-    //         id="time"
-    //         name="time"
-    //         value={doctorData.time}
-    //         onChange={(e) =>
-    //           setDoctorData({ ...doctorData, time: e.target.value })
-    //         }
-    //         className="w-full p-2 border border-gray-300 rounded mt-2"
-    //         required
-    //       />
-    //     </div>
-    //     <div className="mb-4">
-    //       <label
-    //         htmlFor="daysAvailable"
-    //         className="block text-c5 text-sm font-semibold"
-    //       >
-    //         Days Available
-    //       </label>
-    //       <input
-    //         type="text"
-    //         id="daysAvailable"
-    //         name="daysAvailable"
-    //         value={doctorData.daysAvailable}
-    //         onChange={(e) =>
-    //           setDoctorData({ ...doctorData, daysAvailable: e.target.value })
-    //         }
-    //         className="w-full p-2 border border-gray-300 rounded mt-2"
-    //         required
-    //       />
-    //     </div>
-    //     <div className="mb-4">
-    //       <label
-    //         htmlFor="hospitalName"
-    //         className="block text-c5 text-sm font-semibold"
-    //       >
-    //         Hospital Name
-    //       </label>
-    //       <input
-    //         type="text"
-    //         id="hospitalName"
-    //         name="hospitalName"
-    //         value={getHospitalName()}
-    //         readOnly // Make the input read-only
-    //         className="w-full p-2 border border-gray-300 rounded mt-2"
-    //         required
-    //       />
-    //     </div>
-    //     {/* <div className="mt-6">
-    //       <button type="submit" className="bg-t1 text-c3 p-2 rounded w-full">
-    //         Upload Doctor Information
-    //       </button>
-    //     </div> */}
-    //     <div className="flex justify-center">
-    //       <button
-    //         type="submit"
-    //         className=" hover:bg-t4 text-white font-bold py-2 px-4 hover:text-c4
-    //       hover:outline-double rounded-2xl
-    //     focus:outline-none focus:shadow-outline bg-c5"
-    //       >
-    //         Add Doctor
-    //       </button>
-    //     </div>
-    //   </form>
-    //   <div>
-    //     <ToastContainer
-    //       position="top-right"
-    //       autoClose={3000}
-    //       hideProgressBar={false}
-    //       newestOnTop={false}
-    //       closeOnClick
-    //       pauseOnFocusLoss
-    //       draggable
-    //       pauseOnHover
-    //     />
-    //   </div>
-    // </div>
     <motion.div
       initial={{ opacity: 0, y: -20 }}
       animate={controls}

@@ -9,7 +9,9 @@ function Hospitals() {
   const [hospitalsData, setHospitalsData] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/superusers")
+    fetch(
+      "https://healthcarebackend-6vr474q1v-shayalizas-projects.vercel.app//api/superusers"
+    )
       .then((response) => response.json())
       .then((data) => setHospitalsData(data))
       .catch((error) => console.error("Error fetching hospital data:", error));

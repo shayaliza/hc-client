@@ -7,7 +7,9 @@ function DoctorList() {
   const [doctors, setDoctors] = useState([]);
   // const controls = useAnimation();
   useEffect(() => {
-    fetch("http://localhost:5000/api/get-all-doctors")
+    fetch(
+      "https://healthcarebackend-6vr474q1v-shayalizas-projects.vercel.app//api/get-all-doctors"
+    )
       .then((response) => response.json())
       .then((data) => {
         setDoctors(data);

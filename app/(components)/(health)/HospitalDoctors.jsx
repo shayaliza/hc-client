@@ -8,7 +8,7 @@ const HospitalDoctors = ({ hospitalName }) => {
   const [showDoctors, setShowDoctors] = useState(false);
 
   const handleViewDoctors = () => {
-    const apiUrl = `http://localhost:5000/api/doctors/${hospitalName}`;
+    const apiUrl = `https://healthcarebackend-6vr474q1v-shayalizas-projects.vercel.app//api/doctors/${hospitalName}`;
     console.log("API URL:", apiUrl);
 
     fetch(apiUrl)
