@@ -1,11 +1,11 @@
 //app/showDoctor/page.js
 "use client";
 import React, { useState, useEffect } from "react";
-import { motion, useAnimation } from "framer-motion";
+import { motion } from "framer-motion";
 
 function DoctorList() {
   const [doctors, setDoctors] = useState([]);
-  const controls = useAnimation();
+  // const controls = useAnimation();
   useEffect(() => {
     fetch("http://localhost:5000/api/get-all-doctors")
       .then((response) => response.json())

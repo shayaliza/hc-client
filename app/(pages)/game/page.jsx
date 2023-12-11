@@ -2,7 +2,7 @@
 import React from "react";
 import { useState } from "react";
 import Game1 from "../../(components)/(game)/game1";
-import Game2 from "../../(components)/(game)/game2";
+// import Game2 from "../../(components)/(game)/game2";
 import Bodyfat from "../../(components)/(calculator)/bodyfat";
 
 function Page() {
@@ -46,7 +46,7 @@ function Page() {
         </button>
       </div>
       {gameType === "game1" && <Game1 />}
-      {gameType === "game2" && <Game2 />}
+      {/* {gameType === "game2" && <Game2 />} */}
       {gameType === "bodyfat" && <Bodyfat />}
     </div>
   );
