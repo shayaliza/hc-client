@@ -40,7 +40,7 @@ app.use("/api", authRoutes);
 // app.use("/api", postRoutes);
 
 //@Start the server
-const port = process.env.PORT;
+const port = process.env.FRONTEND_URL;
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
